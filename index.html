@@ -179,6 +179,83 @@
         .lang-fa {
             font-family: 'Vazir', 'Inter', sans-serif;
         }
+        
+        /* Dark Mode Styles */
+        .dark {
+            color-scheme: dark;
+        }
+        
+        .dark body {
+            background-color: #111827;
+            color: #f9fafb;
+        }
+        
+        .dark .header-blur {
+            background-color: rgba(17, 24, 39, 0.95);
+            border-color: #374151;
+        }
+        
+        .dark .bg-white {
+            background-color: #1f2937;
+        }
+        
+        .dark .bg-gray-50 {
+            background-color: #111827;
+        }
+        
+        .dark .text-gray-900 {
+            color: #f9fafb;
+        }
+        
+        .dark .text-gray-700 {
+            color: #d1d5db;
+        }
+        
+        .dark .text-gray-600 {
+            color: #9ca3af;
+        }
+        
+        .dark .text-gray-500 {
+            color: #6b7280;
+        }
+        
+        .dark .text-gray-400 {
+            color: #9ca3af;
+        }
+        
+        .dark .border-gray-200 {
+            border-color: #374151;
+        }
+        
+        .dark .from-blue-50 {
+            --tw-gradient-from: #1e293b;
+        }
+        
+        .dark .to-teal-50 {
+            --tw-gradient-to: #134e4a;
+        }
+        
+        .dark .shadow-lg {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+        }
+        
+        .dark .shadow-2xl {
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* Testimonial carousel */
+        .testimonial-card {
+            min-height: 280px;
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-carousel {
+            scroll-behavior: smooth;
+        }
+        
+        .testimonial-carousel::-webkit-scrollbar {
+            display: none;
+        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -200,12 +277,17 @@
                         <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium transition-colors" data-translate="nav_contact">Contact</a>
                     </div>
                     
+                    <!-- Dark Mode Toggle -->
+                    <button id="dark-mode-toggle" class="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition-colors">
+                        <i class="fas fa-moon text-gray-700 dark:text-gray-300" id="dark-mode-icon"></i>
+                    </button>
+                    
                     <!-- Language Switcher -->
                     <div class="relative">
-                        <button id="language-btn" class="flex items-center space-x-2 px-3 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors">
+                        <button id="language-btn" class="flex items-center space-x-2 px-3 py-2 bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 rounded-lg transition-colors">
                             <span id="current-flag" class="text-lg">🇺🇸</span>
-                            <span id="current-lang" class="text-sm font-medium text-gray-700">EN</span>
-                            <i class="fas fa-chevron-down text-xs text-gray-500"></i>
+                            <span id="current-lang" class="text-sm font-medium text-gray-700 dark:text-gray-300">EN</span>
+                            <i class="fas fa-chevron-down text-xs text-gray-500 dark:text-gray-400"></i>
                         </button>
                         
                         <div id="language-dropdown" class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 hidden z-50">
@@ -598,6 +680,125 @@
                         </li>
                     </ul>
                     <div class="text-sm text-blue-600 font-semibold">Starting from $60/hour</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4" data-translate="testimonials_title">Student Testimonials</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto" data-translate="testimonials_subtitle">
+                    Hear from students who have achieved their language learning goals with expert guidance
+                </p>
+            </div>
+
+            <!-- Testimonials Carousel -->
+            <div class="relative">
+                <div class="testimonial-carousel flex space-x-6 overflow-x-auto pb-6" id="testimonials-container">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card flex-shrink-0 w-80 bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-100 dark:border-gray-700">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mr-4">
+                                <span class="text-blue-600 dark:text-blue-400 font-bold text-lg">A</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">Ahmed Al-Rashid</h4>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">Business Executive, UAE</p>
+                            </div>
+                        </div>
+                        <div class="flex mb-4">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                            "Dr. Abdulrahman's approach to teaching English for business has been transformative. His cultural insights and practical exercises helped me excel in international negotiations."
+                        </p>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card flex-shrink-0 w-80 bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-100 dark:border-gray-700">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-teal-100 dark:bg-teal-900 rounded-full flex items-center justify-center mr-4">
+                                <span class="text-teal-600 dark:text-teal-400 font-bold text-lg">M</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">Maria Chen</h4>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">PhD Student, China</p>
+                            </div>
+                        </div>
+                        <div class="flex mb-4">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                            "I achieved a 7.5 IELTS score thanks to Dr. Abdulrahman's structured approach. His mock tests and personalized feedback were invaluable for my university application."
+                        </p>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card flex-shrink-0 w-80 bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-100 dark:border-gray-700">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mr-4">
+                                <span class="text-purple-600 dark:text-purple-400 font-bold text-lg">L</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">Lisa Schmidt</h4>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">Teacher, Germany</p>
+                            </div>
+                        </div>
+                        <div class="flex mb-4">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                            "Learning Arabic seemed impossible until I found Dr. Abdulrahman. His patient teaching style and cultural immersion methods made the language come alive for me."
+                        </p>
+                    </div>
+
+                    <!-- Testimonial 4 -->
+                    <div class="testimonial-card flex-shrink-0 w-80 bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-100 dark:border-gray-700">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mr-4">
+                                <span class="text-green-600 dark:text-green-400 font-bold text-lg">R</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">Reza Mohammadi</h4>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">Engineer, Iran</p>
+                            </div>
+                        </div>
+                        <div class="flex mb-4">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                            "Dr. Abdulrahman's expertise in multiple languages is remarkable. He helped me improve my technical English for international conferences with great success."
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Carousel Navigation -->
+                <div class="flex justify-center mt-8 space-x-4">
+                    <button id="prev-testimonial" class="p-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full transition-colors">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button id="next-testimonial" class="p-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full transition-colors">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -1219,7 +1420,9 @@
                 footer_contact: "Contact",
                 footer_download_cv: "Download CV",
                 footer_contact_info: "Contact",
-                footer_rights: "All rights reserved."
+                footer_rights: "All rights reserved.",
+                testimonials_title: "Student Testimonials",
+                testimonials_subtitle: "Hear from students who have achieved their language learning goals with expert guidance"
             },
             ar: {
                 nav_home: "الرئيسية",
@@ -1286,7 +1489,9 @@
                 footer_contact: "اتصل بنا",
                 footer_download_cv: "تحميل السيرة الذاتية",
                 footer_contact_info: "اتصل بنا",
-                footer_rights: "جميع الحقوق محفوظة."
+                footer_rights: "جميع الحقوق محفوظة.",
+                testimonials_title: "شهادات الطلاب",
+                testimonials_subtitle: "استمع إلى الطلاب الذين حققوا أهدافهم في تعلم اللغة بإرشاد الخبراء"
             },
             zh: {
                 nav_home: "首页",
@@ -1644,6 +1849,67 @@
         document.addEventListener('DOMContentLoaded', () => {
             switchLanguage(currentLanguage);
         });
+
+        // Dark Mode functionality
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const darkModeIcon = document.getElementById('dark-mode-icon');
+        let isDarkMode = localStorage.getItem('darkMode') === 'true';
+
+        function toggleDarkMode() {
+            isDarkMode = !isDarkMode;
+            localStorage.setItem('darkMode', isDarkMode);
+            updateDarkMode();
+        }
+
+        function updateDarkMode() {
+            if (isDarkMode) {
+                document.documentElement.classList.add('dark');
+                darkModeIcon.className = 'fas fa-sun text-gray-700 dark:text-gray-300';
+            } else {
+                document.documentElement.classList.remove('dark');
+                darkModeIcon.className = 'fas fa-moon text-gray-700 dark:text-gray-300';
+            }
+        }
+
+        darkModeToggle.addEventListener('click', toggleDarkMode);
+
+        // Initialize dark mode on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            updateDarkMode();
+        });
+
+        // Testimonials Carousel functionality
+        const testimonialsContainer = document.getElementById('testimonials-container');
+        const prevBtn = document.getElementById('prev-testimonial');
+        const nextBtn = document.getElementById('next-testimonial');
+        let currentTestimonial = 0;
+
+        function scrollToTestimonial(index) {
+            const cardWidth = 320; // 80 * 4 (w-80 = 20rem = 320px)
+            const scrollAmount = index * (cardWidth + 24); // 24px for gap
+            testimonialsContainer.scrollTo({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentTestimonial = Math.max(0, currentTestimonial - 1);
+            scrollToTestimonial(currentTestimonial);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            const maxTestimonials = testimonialsContainer.children.length - 1;
+            currentTestimonial = Math.min(maxTestimonials, currentTestimonial + 1);
+            scrollToTestimonial(currentTestimonial);
+        });
+
+        // Auto-scroll testimonials every 5 seconds
+        setInterval(() => {
+            const maxTestimonials = testimonialsContainer.children.length - 1;
+            currentTestimonial = currentTestimonial >= maxTestimonials ? 0 : currentTestimonial + 1;
+            scrollToTestimonial(currentTestimonial);
+        }, 5000);
     </script>
 </body>
 </html>
