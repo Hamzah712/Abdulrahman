@@ -100,6 +100,58 @@
             transform: translateY(-2px);
             box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
         }
+        
+        /* RTL Support */
+        [dir="rtl"] {
+            text-align: right;
+        }
+        
+        [dir="rtl"] .flex {
+            flex-direction: row-reverse;
+        }
+        
+        [dir="rtl"] .space-x-8 > * + * {
+            margin-left: 0;
+            margin-right: 2rem;
+        }
+        
+        [dir="rtl"] .space-x-3 > * + * {
+            margin-left: 0;
+            margin-right: 0.75rem;
+        }
+        
+        [dir="rtl"] .space-x-2 > * + * {
+            margin-left: 0;
+            margin-right: 0.5rem;
+        }
+        
+        [dir="rtl"] .mr-2 {
+            margin-right: 0;
+            margin-left: 0.5rem;
+        }
+        
+        [dir="rtl"] .mr-3 {
+            margin-right: 0;
+            margin-left: 0.75rem;
+        }
+        
+        [dir="rtl"] .ml-4 {
+            margin-left: 0;
+            margin-right: 1rem;
+        }
+        
+        /* Language-specific fonts */
+        .lang-ar {
+            font-family: 'Amiri', 'Inter', sans-serif;
+        }
+        
+        .lang-zh {
+            font-family: 'Noto Sans SC', 'Inter', sans-serif;
+        }
+        
+        .lang-fa {
+            font-family: 'Vazir', 'Inter', sans-serif;
+        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -112,13 +164,49 @@
                 </div>
                 
                 <!-- Desktop Navigation -->
-                <div class="hidden md:block">
+                <div class="hidden md:flex items-center space-x-8">
                     <div class="flex space-x-8">
-                        <a href="#home" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Home</a>
-                        <a href="#about" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">About</a>
-                        <a href="#services" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Services</a>
-                        <a href="#languages" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Languages</a>
-                        <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Contact</a>
+                        <a href="#home" class="text-gray-700 hover:text-blue-600 font-medium transition-colors" data-translate="nav_home">Home</a>
+                        <a href="#about" class="text-gray-700 hover:text-blue-600 font-medium transition-colors" data-translate="nav_about">About</a>
+                        <a href="#services" class="text-gray-700 hover:text-blue-600 font-medium transition-colors" data-translate="nav_services">Services</a>
+                        <a href="#languages" class="text-gray-700 hover:text-blue-600 font-medium transition-colors" data-translate="nav_languages">Languages</a>
+                        <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium transition-colors" data-translate="nav_contact">Contact</a>
+                    </div>
+                    
+                    <!-- Language Switcher -->
+                    <div class="relative">
+                        <button id="language-btn" class="flex items-center space-x-2 px-3 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors">
+                            <span id="current-flag" class="text-lg">🇺🇸</span>
+                            <span id="current-lang" class="text-sm font-medium text-gray-700">EN</span>
+                            <i class="fas fa-chevron-down text-xs text-gray-500"></i>
+                        </button>
+                        
+                        <div id="language-dropdown" class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 hidden z-50">
+                            <button class="language-option w-full px-4 py-2 text-left hover:bg-gray-50 flex items-center space-x-3" data-lang="en">
+                                <span class="text-lg">🇺🇸</span>
+                                <span class="font-medium">English</span>
+                            </button>
+                            <button class="language-option w-full px-4 py-2 text-left hover:bg-gray-50 flex items-center space-x-3" data-lang="ar">
+                                <span class="text-lg">🇸🇦</span>
+                                <span class="font-medium">العربية</span>
+                            </button>
+                            <button class="language-option w-full px-4 py-2 text-left hover:bg-gray-50 flex items-center space-x-3" data-lang="zh">
+                                <span class="text-lg">🇨🇳</span>
+                                <span class="font-medium">中文</span>
+                            </button>
+                            <button class="language-option w-full px-4 py-2 text-left hover:bg-gray-50 flex items-center space-x-3" data-lang="tr">
+                                <span class="text-lg">🇹🇷</span>
+                                <span class="font-medium">Türkçe</span>
+                            </button>
+                            <button class="language-option w-full px-4 py-2 text-left hover:bg-gray-50 flex items-center space-x-3" data-lang="fa">
+                                <span class="text-lg">🇮🇷</span>
+                                <span class="font-medium">فارسی</span>
+                            </button>
+                            <button class="language-option w-full px-4 py-2 text-left hover:bg-gray-50 flex items-center space-x-3" data-lang="ru">
+                                <span class="text-lg">🇷🇺</span>
+                                <span class="font-medium">Русский</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 
@@ -134,11 +222,49 @@
         <!-- Mobile Navigation Menu -->
         <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200">
             <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="#home" class="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium">Home</a>
-                <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium">About</a>
-                <a href="#services" class="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium">Services</a>
-                <a href="#languages" class="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium">Languages</a>
-                <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium">Contact</a>
+                <a href="#home" class="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium" data-translate="nav_home">Home</a>
+                <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium" data-translate="nav_about">About</a>
+                <a href="#services" class="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium" data-translate="nav_services">Services</a>
+                <a href="#languages" class="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium" data-translate="nav_languages">Languages</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium" data-translate="nav_contact">Contact</a>
+                
+                <!-- Mobile Language Switcher -->
+                <div class="px-3 py-2">
+                    <button id="mobile-language-btn" class="w-full flex items-center justify-between px-3 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors">
+                        <div class="flex items-center space-x-2">
+                            <span id="mobile-current-flag" class="text-lg">🇺🇸</span>
+                            <span id="mobile-current-lang" class="text-sm font-medium text-gray-700">English</span>
+                        </div>
+                        <i class="fas fa-chevron-down text-xs text-gray-500"></i>
+                    </button>
+                    
+                    <div id="mobile-language-dropdown" class="mt-2 hidden">
+                        <button class="mobile-language-option w-full px-3 py-2 text-left hover:bg-gray-50 flex items-center space-x-3 rounded" data-lang="en">
+                            <span class="text-lg">🇺🇸</span>
+                            <span class="font-medium">English</span>
+                        </button>
+                        <button class="mobile-language-option w-full px-3 py-2 text-left hover:bg-gray-50 flex items-center space-x-3 rounded" data-lang="ar">
+                            <span class="text-lg">🇸🇦</span>
+                            <span class="font-medium">العربية</span>
+                        </button>
+                        <button class="mobile-language-option w-full px-3 py-2 text-left hover:bg-gray-50 flex items-center space-x-3 rounded" data-lang="zh">
+                            <span class="text-lg">🇨🇳</span>
+                            <span class="font-medium">中文</span>
+                        </button>
+                        <button class="mobile-language-option w-full px-3 py-2 text-left hover:bg-gray-50 flex items-center space-x-3 rounded" data-lang="tr">
+                            <span class="text-lg">🇹🇷</span>
+                            <span class="font-medium">Türkçe</span>
+                        </button>
+                        <button class="mobile-language-option w-full px-3 py-2 text-left hover:bg-gray-50 flex items-center space-x-3 rounded" data-lang="fa">
+                            <span class="text-lg">🇮🇷</span>
+                            <span class="font-medium">فارسی</span>
+                        </button>
+                        <button class="mobile-language-option w-full px-3 py-2 text-left hover:bg-gray-50 flex items-center space-x-3 rounded" data-lang="ru">
+                            <span class="text-lg">🇷🇺</span>
+                            <span class="font-medium">Русский</span>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
@@ -149,20 +275,20 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div class="fade-in">
                     <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                        Master Languages with 
-                        <span class="text-blue-600">Expert Guidance</span>
+                        <span data-translate="hero_title_1">Master Languages with</span> 
+                        <span class="text-blue-600" data-translate="hero_title_2">Expert Guidance</span>
                     </h1>
-                    <p class="text-xl text-gray-600 mt-6 leading-relaxed">
+                    <p class="text-xl text-gray-600 mt-6 leading-relaxed" data-translate="hero_description">
                         Multilingual Education Specialist offering university-level language instruction in 7+ languages including Arabic, English, French, German, and Russian.
                     </p>
                     <div class="mt-8 flex flex-col sm:flex-row gap-4">
                         <a href="#contact" class="btn-gradient text-white px-8 py-4 rounded-lg font-semibold text-lg inline-flex items-center justify-center">
                             <i class="fas fa-calendar-alt mr-2"></i>
-                            Book a Session
+                            <span data-translate="btn_book_session">Book a Session</span>
                         </a>
                         <a href="#services" class="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-600 hover:text-white transition-all inline-flex items-center justify-center">
                             <i class="fas fa-book mr-2"></i>
-                            View Services
+                            <span data-translate="btn_view_services">View Services</span>
                         </a>
                     </div>
                     
@@ -170,15 +296,15 @@
                     <div class="mt-12 grid grid-cols-3 gap-6">
                         <div class="text-center">
                             <div class="text-3xl font-bold text-blue-600">7+</div>
-                            <div class="text-gray-600">Languages</div>
+                            <div class="text-gray-600" data-translate="stat_languages">Languages</div>
                         </div>
                         <div class="text-center">
                             <div class="text-3xl font-bold text-blue-600">500+</div>
-                            <div class="text-gray-600">Students</div>
+                            <div class="text-gray-600" data-translate="stat_students">Students</div>
                         </div>
                         <div class="text-center">
                             <div class="text-3xl font-bold text-blue-600">10+</div>
-                            <div class="text-gray-600">Years Experience</div>
+                            <div class="text-gray-600" data-translate="stat_experience">Years Experience</div>
                         </div>
                     </div>
                 </div>
@@ -997,6 +1123,187 @@
             if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
                 mobileMenu.classList.add('hidden');
             }
+        });
+
+        // Translation System
+        const translations = {
+            en: {
+                nav_home: "Home",
+                nav_about: "About",
+                nav_services: "Services",
+                nav_languages: "Languages",
+                nav_contact: "Contact",
+                hero_title_1: "Master Languages with",
+                hero_title_2: "Expert Guidance",
+                hero_description: "Multilingual Education Specialist offering university-level language instruction in 7+ languages including Arabic, English, French, German, and Russian.",
+                btn_book_session: "Book a Session",
+                btn_view_services: "View Services",
+                stat_languages: "Languages",
+                stat_students: "Students",
+                stat_experience: "Years Experience"
+            },
+            ar: {
+                nav_home: "الرئيسية",
+                nav_about: "حول",
+                nav_services: "الخدمات",
+                nav_languages: "اللغات",
+                nav_contact: "اتصل بنا",
+                hero_title_1: "أتقن اللغات مع",
+                hero_title_2: "إرشاد الخبراء",
+                hero_description: "أخصائي تعليم متعدد اللغات يقدم تعليم اللغات على مستوى جامعي في أكثر من 7 لغات بما في ذلك العربية والإنجليزية والفرنسية والألمانية والروسية.",
+                btn_book_session: "احجز جلسة",
+                btn_view_services: "عرض الخدمات",
+                stat_languages: "لغات",
+                stat_students: "طلاب",
+                stat_experience: "سنوات خبرة"
+            },
+            zh: {
+                nav_home: "首页",
+                nav_about: "关于",
+                nav_services: "服务",
+                nav_languages: "语言",
+                nav_contact: "联系",
+                hero_title_1: "跟随专家指导",
+                hero_title_2: "掌握语言",
+                hero_description: "多语言教育专家，提供大学水平的语言教学，涵盖阿拉伯语、英语、法语、德语、俄语等7+种语言。",
+                btn_book_session: "预约课程",
+                btn_view_services: "查看服务",
+                stat_languages: "种语言",
+                stat_students: "名学生",
+                stat_experience: "年经验"
+            },
+            tr: {
+                nav_home: "Ana Sayfa",
+                nav_about: "Hakkında",
+                nav_services: "Hizmetler",
+                nav_languages: "Diller",
+                nav_contact: "İletişim",
+                hero_title_1: "Uzman Rehberliğiyle",
+                hero_title_2: "Dillerde Ustalaş",
+                hero_description: "Arapça, İngilizce, Fransızca, Almanca ve Rusça dahil 7+ dilde üniversite düzeyinde dil eğitimi sunan çok dilli eğitim uzmanı.",
+                btn_book_session: "Ders Rezervasyonu",
+                btn_view_services: "Hizmetleri Görüntüle",
+                stat_languages: "Dil",
+                stat_students: "Öğrenci",
+                stat_experience: "Yıl Deneyim"
+            },
+            fa: {
+                nav_home: "خانه",
+                nav_about: "درباره",
+                nav_services: "خدمات",
+                nav_languages: "زبان‌ها",
+                nav_contact: "تماس",
+                hero_title_1: "با راهنمایی متخصص",
+                hero_title_2: "زبان‌ها را بیاموزید",
+                hero_description: "متخصص آموزش چندزبانه که آموزش زبان در سطح دانشگاهی را در بیش از 7 زبان از جمله عربی، انگلیسی، فرانسوی، آلمانی و روسی ارائه می‌دهد.",
+                btn_book_session: "رزرو جلسه",
+                btn_view_services: "مشاهده خدمات",
+                stat_languages: "زبان",
+                stat_students: "دانشجو",
+                stat_experience: "سال تجربه"
+            },
+            ru: {
+                nav_home: "Главная",
+                nav_about: "О нас",
+                nav_services: "Услуги",
+                nav_languages: "Языки",
+                nav_contact: "Контакты",
+                hero_title_1: "Изучайте языки с",
+                hero_title_2: "Экспертным руководством",
+                hero_description: "Специалист по многоязычному образованию, предлагающий языковое обучение университетского уровня на 7+ языках, включая арабский, английский, французский, немецкий и русский.",
+                btn_book_session: "Записаться на урок",
+                btn_view_services: "Посмотреть услуги",
+                stat_languages: "Языков",
+                stat_students: "Студентов",
+                stat_experience: "Лет опыта"
+            }
+        };
+
+        const languageConfig = {
+            en: { flag: "🇺🇸", name: "English", dir: "ltr", class: "" },
+            ar: { flag: "🇸🇦", name: "العربية", dir: "rtl", class: "lang-ar" },
+            zh: { flag: "🇨🇳", name: "中文", dir: "ltr", class: "lang-zh" },
+            tr: { flag: "🇹🇷", name: "Türkçe", dir: "ltr", class: "" },
+            fa: { flag: "🇮🇷", name: "فارسی", dir: "rtl", class: "lang-fa" },
+            ru: { flag: "🇷🇺", name: "Русский", dir: "ltr", class: "" }
+        };
+
+        let currentLanguage = localStorage.getItem('language') || 'en';
+
+        // Language switching functionality
+        function switchLanguage(lang) {
+            currentLanguage = lang;
+            localStorage.setItem('language', lang);
+            
+            // Update text content
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+            
+            // Update document direction and class
+            const config = languageConfig[lang];
+            document.documentElement.dir = config.dir;
+            document.body.className = document.body.className.replace(/lang-\w+/g, '');
+            if (config.class) {
+                document.body.classList.add(config.class);
+            }
+            
+            // Update language selector displays
+            updateLanguageDisplay();
+        }
+
+        function updateLanguageDisplay() {
+            const config = languageConfig[currentLanguage];
+            
+            // Desktop
+            document.getElementById('current-flag').textContent = config.flag;
+            document.getElementById('current-lang').textContent = currentLanguage.toUpperCase();
+            
+            // Mobile
+            document.getElementById('mobile-current-flag').textContent = config.flag;
+            document.getElementById('mobile-current-lang').textContent = config.name;
+        }
+
+        // Language dropdown functionality
+        const languageBtn = document.getElementById('language-btn');
+        const languageDropdown = document.getElementById('language-dropdown');
+        const mobileLanguageBtn = document.getElementById('mobile-language-btn');
+        const mobileLanguageDropdown = document.getElementById('mobile-language-dropdown');
+
+        // Desktop language dropdown
+        languageBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            languageDropdown.classList.toggle('hidden');
+        });
+
+        // Mobile language dropdown
+        mobileLanguageBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            mobileLanguageDropdown.classList.toggle('hidden');
+        });
+
+        // Language option selection
+        document.querySelectorAll('.language-option, .mobile-language-option').forEach(option => {
+            option.addEventListener('click', () => {
+                const lang = option.getAttribute('data-lang');
+                switchLanguage(lang);
+                languageDropdown.classList.add('hidden');
+                mobileLanguageDropdown.classList.add('hidden');
+            });
+        });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', () => {
+            languageDropdown.classList.add('hidden');
+            mobileLanguageDropdown.classList.add('hidden');
+        });
+
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            switchLanguage(currentLanguage);
         });
     </script>
 </body>
