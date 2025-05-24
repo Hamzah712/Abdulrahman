@@ -106,7 +106,15 @@
             text-align: right;
         }
         
-        [dir="rtl"] .flex {
+        [dir="rtl"] .text-left {
+            text-align: right;
+        }
+        
+        [dir="rtl"] .text-center {
+            text-align: center;
+        }
+        
+        [dir="rtl"] .flex:not(.justify-center):not(.justify-between) {
             flex-direction: row-reverse;
         }
         
@@ -138,6 +146,25 @@
         [dir="rtl"] .ml-4 {
             margin-left: 0;
             margin-right: 1rem;
+        }
+        
+        [dir="rtl"] .items-start .flex-shrink-0 {
+            margin-left: 1rem;
+            margin-right: 0;
+        }
+        
+        [dir="rtl"] .grid.grid-cols-1.lg\\:grid-cols-2 {
+            direction: rtl;
+        }
+        
+        [dir="rtl"] .absolute.right-0 {
+            right: auto;
+            left: 0;
+        }
+        
+        [dir="rtl"] .rounded-lg,
+        [dir="rtl"] .rounded-2xl {
+            border-radius: 0.5rem;
         }
         
         /* Language-specific fonts */
@@ -337,23 +364,23 @@
     <section id="about" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 fade-in">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">About Dr. Abdulrahman</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4" data-translate="about_title">About Dr. Abdulrahman</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-translate="about_subtitle">
                     Dedicated to empowering students through comprehensive language education and cultural understanding
                 </p>
             </div>
             
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div class="fade-in">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Academic Excellence & Teaching Philosophy</h3>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6" data-translate="about_philosophy_title">Academic Excellence & Teaching Philosophy</h3>
                     <div class="space-y-6">
                         <div class="flex items-start">
                             <div class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
                                 <i class="fas fa-graduation-cap text-blue-600"></i>
                             </div>
                             <div class="ml-4">
-                                <h4 class="text-lg font-semibold text-gray-900">University-Level Expertise</h4>
-                                <p class="text-gray-600">PhD in Applied Linguistics with specialization in multilingual education and second language acquisition.</p>
+                                <h4 class="text-lg font-semibold text-gray-900" data-translate="about_expertise_title">University-Level Expertise</h4>
+                                <p class="text-gray-600" data-translate="about_expertise_desc">PhD in Applied Linguistics with specialization in multilingual education and second language acquisition.</p>
                             </div>
                         </div>
                         
@@ -362,8 +389,8 @@
                                 <i class="fas fa-brain text-teal-600"></i>
                             </div>
                             <div class="ml-4">
-                                <h4 class="text-lg font-semibold text-gray-900">Cognitive Learning Approach</h4>
-                                <p class="text-gray-600">Utilizing modern neurolinguistic methods to accelerate language acquisition and retention.</p>
+                                <h4 class="text-lg font-semibold text-gray-900" data-translate="about_approach_title">Cognitive Learning Approach</h4>
+                                <p class="text-gray-600" data-translate="about_approach_desc">Utilizing modern neurolinguistic methods to accelerate language acquisition and retention.</p>
                             </div>
                         </div>
                         
@@ -372,8 +399,8 @@
                                 <i class="fas fa-users text-blue-600"></i>
                             </div>
                             <div class="ml-4">
-                                <h4 class="text-lg font-semibold text-gray-900">Personalized Instruction</h4>
-                                <p class="text-gray-600">Tailored teaching methods adapted to individual learning styles and cultural backgrounds.</p>
+                                <h4 class="text-lg font-semibold text-gray-900" data-translate="about_instruction_title">Personalized Instruction</h4>
+                                <p class="text-gray-600" data-translate="about_instruction_desc">Tailored teaching methods adapted to individual learning styles and cultural backgrounds.</p>
                             </div>
                         </div>
                     </div>
@@ -381,27 +408,27 @@
                 
                 <div class="fade-in">
                     <div class="bg-gradient-to-br from-blue-50 to-teal-50 rounded-2xl p-8">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Credentials & Achievements</h3>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6" data-translate="about_credentials_title">Credentials & Achievements</h3>
                         <div class="space-y-4">
                             <div class="flex items-center">
                                 <i class="fas fa-check-circle text-teal-600 mr-3"></i>
-                                <span class="text-gray-700">PhD in Applied Linguistics - University of Oxford</span>
+                                <span class="text-gray-700" data-translate="credential_phd">PhD in Applied Linguistics - University of Oxford</span>
                             </div>
                             <div class="flex items-center">
                                 <i class="fas fa-check-circle text-teal-600 mr-3"></i>
-                                <span class="text-gray-700">CELTA Certified English Language Teacher</span>
+                                <span class="text-gray-700" data-translate="credential_celta">CELTA Certified English Language Teacher</span>
                             </div>
                             <div class="flex items-center">
                                 <i class="fas fa-check-circle text-teal-600 mr-3"></i>
-                                <span class="text-gray-700">IELTS Official Examiner Certification</span>
+                                <span class="text-gray-700" data-translate="credential_ielts">IELTS Official Examiner Certification</span>
                             </div>
                             <div class="flex items-center">
                                 <i class="fas fa-check-circle text-teal-600 mr-3"></i>
-                                <span class="text-gray-700">Published Research in Language Acquisition</span>
+                                <span class="text-gray-700" data-translate="credential_research">Published Research in Language Acquisition</span>
                             </div>
                             <div class="flex items-center">
                                 <i class="fas fa-check-circle text-teal-600 mr-3"></i>
-                                <span class="text-gray-700">Guest Lecturer at International Universities</span>
+                                <span class="text-gray-700" data-translate="credential_lecturer">Guest Lecturer at International Universities</span>
                             </div>
                         </div>
                         
@@ -409,7 +436,7 @@
                         <div class="mt-8">
                             <a href="assets/abdulrahman-cv.pdf" download class="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">
                                 <i class="fas fa-download mr-2"></i>
-                                Download Complete CV
+                                <span data-translate="btn_download_cv">Download Complete CV</span>
                             </a>
                         </div>
                     </div>
@@ -422,8 +449,8 @@
     <section id="services" class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 fade-in">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">Language Learning Services</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4" data-translate="services_title">Language Learning Services</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-translate="services_subtitle">
                     Comprehensive language programs designed to meet your academic, professional, and personal goals
                 </p>
             </div>
@@ -1140,7 +1167,25 @@
                 btn_view_services: "View Services",
                 stat_languages: "Languages",
                 stat_students: "Students",
-                stat_experience: "Years Experience"
+                stat_experience: "Years Experience",
+                about_title: "About Dr. Abdulrahman",
+                about_subtitle: "Dedicated to empowering students through comprehensive language education and cultural understanding",
+                about_philosophy_title: "Academic Excellence & Teaching Philosophy",
+                about_expertise_title: "University-Level Expertise",
+                about_expertise_desc: "PhD in Applied Linguistics with specialization in multilingual education and second language acquisition.",
+                about_approach_title: "Cognitive Learning Approach",
+                about_approach_desc: "Utilizing modern neurolinguistic methods to accelerate language acquisition and retention.",
+                about_instruction_title: "Personalized Instruction",
+                about_instruction_desc: "Tailored teaching methods adapted to individual learning styles and cultural backgrounds.",
+                about_credentials_title: "Credentials & Achievements",
+                credential_phd: "PhD in Applied Linguistics - University of Oxford",
+                credential_celta: "CELTA Certified English Language Teacher",
+                credential_ielts: "IELTS Official Examiner Certification",
+                credential_research: "Published Research in Language Acquisition",
+                credential_lecturer: "Guest Lecturer at International Universities",
+                btn_download_cv: "Download Complete CV",
+                services_title: "Language Learning Services",
+                services_subtitle: "Comprehensive language programs designed to meet your academic, professional, and personal goals"
             },
             ar: {
                 nav_home: "الرئيسية",
@@ -1155,7 +1200,25 @@
                 btn_view_services: "عرض الخدمات",
                 stat_languages: "لغات",
                 stat_students: "طلاب",
-                stat_experience: "سنوات خبرة"
+                stat_experience: "سنوات خبرة",
+                about_title: "حول الدكتور عبدالرحمن",
+                about_subtitle: "مكرس لتمكين الطلاب من خلال التعليم الشامل للغات والفهم الثقافي",
+                about_philosophy_title: "التميز الأكاديمي وفلسفة التدريس",
+                about_expertise_title: "خبرة على مستوى جامعي",
+                about_expertise_desc: "دكتوراه في اللسانيات التطبيقية مع تخصص في التعليم متعدد اللغات واكتساب اللغة الثانية.",
+                about_approach_title: "نهج التعلم المعرفي",
+                about_approach_desc: "استخدام الطرق العصبية اللغوية الحديثة لتسريع اكتساب اللغة والاحتفاظ بها.",
+                about_instruction_title: "التعليم الشخصي",
+                about_instruction_desc: "طرق تدريس مصممة خصيصاً تتكيف مع أساليب التعلم الفردية والخلفيات الثقافية.",
+                about_credentials_title: "المؤهلات والإنجازات",
+                credential_phd: "دكتوراه في اللسانيات التطبيقية - جامعة أكسفورد",
+                credential_celta: "معلم لغة إنجليزية معتمد CELTA",
+                credential_ielts: "شهادة ممتحن IELTS الرسمي",
+                credential_research: "أبحاث منشورة في اكتساب اللغة",
+                credential_lecturer: "محاضر ضيف في الجامعات الدولية",
+                btn_download_cv: "تحميل السيرة الذاتية الكاملة",
+                services_title: "خدمات تعلم اللغات",
+                services_subtitle: "برامج لغوية شاملة مصممة لتلبية أهدافك الأكاديمية والمهنية والشخصية"
             },
             zh: {
                 nav_home: "首页",
