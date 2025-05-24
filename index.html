@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Abdulrahman - Professional Language Tutor</title>
+    <meta name="description" content="Expert multilingual tutor offering Arabic, English, French, German, Russian language courses and IELTS/TOEFL preparation">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #3B82F6;
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2563EB;
+        }
+        
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Custom animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Language badge hover effect */
+        .language-badge {
+            transition: all 0.3s ease;
+        }
+        
+        .language-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.15);
+        }
+        
+        /* Service card hover effect */
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Form styling */
+        .form-input:focus {
+            outline: none;
+            border-color: #3B82F6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+        
+        /* Header background blur */
+        .header-blur {
+            backdrop-filter: blur(10px);
+            background-color: rgba(248, 250, 252, 0.95);
+        }
+        
+        /* Button gradient */
+        .btn-gradient {
+            background: linear-gradient(135deg, #3B82F6 0%, #10B981 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-gradient:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Fixed Navigation Header -->
+    <nav class="fixed top-0 left-0 right-0 z-50 header-blur border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <h1 class="text-xl font-bold text-blue-600">Dr. Abdulrahman</h1>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="flex space-x-8">
+                        <a href="#home" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Home</a>
+                        <a href="#about" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">About</a>
+                        <a href="#services" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Services</a>
+                        <a href="#languages" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Languages</a>
+                        <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Contact</a>
+                    </div>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-blue-600 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium">Home</a>
+                <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium">About</a>
+                <a href="#services" class="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium">Services</a>
+                <a href="#languages" class="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium">Languages</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-16 bg-gradient-to-br from-blue-50 to-teal-50 min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                        Master Languages with 
+                        <span class="text-blue-600">Expert Guidance</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 mt-6 leading-relaxed">
+                        Multilingual Education Specialist offering university-level language instruction in 7+ languages including Arabic, English, French, German, and Russian.
+                    </p>
+                    <div class="mt-8 flex flex-col sm:flex-row gap-4">
+                        <a href="#contact" class="btn-gradient text-white px-8 py-4 rounded-lg font-semibold text-lg inline-flex items-center justify-center">
+                            <i class="fas fa-calendar-alt mr-2"></i>
+                            Book a Session
+                        </a>
+                        <a href="#services" class="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-600 hover:text-white transition-all inline-flex items-center justify-center">
+                            <i class="fas fa-book mr-2"></i>
+                            View Services
+                        </a>
+                    </div>
+                    
+                    <!-- Quick Stats -->
+                    <div class="mt-12 grid grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-600">7+</div>
+                            <div class="text-gray-600">Languages</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-600">500+</div>
+                            <div class="text-gray-600">Students</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-600">10+</div>
+                            <div class="text-gray-600">Years Experience</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fade-in">
+                    <div class="relative">
+                        <!-- Profile Image Placeholder -->
+                        <div class="w-80 h-80 mx-auto bg-gradient-to-br from-blue-100 to-teal-100 rounded-full flex items-center justify-center shadow-2xl">
+                            <div class="text-center">
+                                <i class="fas fa-user-graduate text-6xl text-blue-600 mb-4"></i>
+                                <div class="text-gray-600 font-medium">Professional Photo</div>
+                                <div class="text-sm text-gray-500">Dr. Abdulrahman</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Floating badges -->
+                        <div class="absolute -top-4 -left-4 bg-white rounded-full p-4 shadow-lg">
+                            <i class="fas fa-certificate text-2xl text-teal-600"></i>
+                        </div>
+                        <div class="absolute -bottom-4 -right-4 bg-white rounded-full p-4 shadow-lg">
+                            <i class="fas fa-globe text-2xl text-blue-600"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">About Dr. Abdulrahman</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Dedicated to empowering students through comprehensive language education and cultural understanding
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Academic Excellence & Teaching Philosophy</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-graduation-cap text-blue-600"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-semibold text-gray-900">University-Level Expertise</h4>
+                                <p class="text-gray-600">PhD in Applied Linguistics with specialization in multilingual education and second language acquisition.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-brain text-teal-600"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-semibold text-gray-900">Cognitive Learning Approach</h4>
+                                <p class="text-gray-600">Utilizing modern neurolinguistic methods to accelerate language acquisition and retention.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-users text-blue-600"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-semibold text-gray-900">Personalized Instruction</h4>
+                                <p class="text-gray-600">Tailored teaching methods adapted to individual learning styles and cultural backgrounds.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fade-in">
+                    <div class="bg-gradient-to-br from-blue-50 to-teal-50 rounded-2xl p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Credentials & Achievements</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-teal-600 mr-3"></i>
+                                <span class="text-gray-700">PhD in Applied Linguistics - University of Oxford</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-teal-600 mr-3"></i>
+                                <span class="text-gray-700">CELTA Certified English Language Teacher</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-teal-600 mr-3"></i>
+                                <span class="text-gray-700">IELTS Official Examiner Certification</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-teal-600 mr-3"></i>
+                                <span class="text-gray-700">Published Research in Language Acquisition</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-teal-600 mr-3"></i>
+                                <span class="text-gray-700">Guest Lecturer at International Universities</span>
+                            </div>
+                        </div>
+                        
+                        <!-- CV Download Button -->
+                        <div class="mt-8">
+                            <a href="assets/abdulrahman-cv.pdf" download class="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">
+                                <i class="fas fa-download mr-2"></i>
+                                Download Complete CV
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Language Learning Services</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Comprehensive language programs designed to meet your academic, professional, and personal goals
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="service-card bg-white rounded-2xl p-8 shadow-lg fade-in">
+                    <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-language text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Arabic for Non-Native Speakers</h3>
+                    <p class="text-gray-600 mb-6">Master Modern Standard Arabic and regional dialects with culturally immersive teaching methods.</p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-teal-600 mr-2"></i>
+                            Classical & Modern Arabic
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-teal-600 mr-2"></i>
+                            Cultural Context Integration
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-teal-600 mr-2"></i>
+                            Business Arabic Available
+                        </li>
+                    </ul>
+                    <div class="text-sm text-blue-600 font-semibold">Starting from $40/hour</div>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="service-card bg-white rounded-2xl p-8 shadow-lg fade-in">
+                    <div class="w-16 h-16 bg-teal-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-certificate text-2xl text-teal-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">IELTS/TOEFL Preparation</h3>
+                    <p class="text-gray-600 mb-6">Achieve your target scores with proven strategies and practice materials from an official examiner.</p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-teal-600 mr-2"></i>
+                            Official Examiner Insights
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-teal-600 mr-2"></i>
+                            Mock Tests & Feedback
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-teal-600 mr-2"></i>
+                            Score Guarantee Programs
+                        </li>
+                    </ul>
+                    <div class="text-sm text-blue-600 font-semibold">Starting from $50/hour</div>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="service-card bg-white rounded-2xl p-8 shadow-lg fade-in">
+                    <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-pen-fancy text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Academic Writing Coaching</h3>
+                    <p class="text-gray-600 mb-6">Enhance your academic writing skills for essays, dissertations, and research papers.</p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-teal-600 mr-2"></i>
+                            Research Methodology
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-teal-600 mr-2"></i>
+                            Citation & Referencing
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-teal-600 mr-2"></i>
+                            Thesis Support Available
+                        </li>
+                    </ul>
+                    <div class="text-sm text-blue-600 font-semibold">Starting from $45/hour</div>
+                </div>
+                
+                <!-- Service Card 4 -->
+                <div class="service-card bg-white rounded-2xl p-8 shadow-lg fade-in">
+                    <div class="w-16 h-16 bg-teal-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-briefcase text-2xl text-teal-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Business Language Skills</h3>
+                    <p class="text-gray-600 mb-6">Professional language training for international business communication and presentations.</p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-teal-600 mr-2"></i>
+                            Corporate Communication
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-teal-600 mr-2"></i>
+                            Presentation Skills
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-teal-600 mr-2"></i>
+                            Industry-Specific Vocabulary
+                        </li>
+                    </ul>
+                    <div class="text-sm text-blue-600 font-semibold">Starting from $55/hour</div>
+                </div>
+                
+                <!-- Service Card 5 -->
+                <div class="service-card bg-white rounded-2xl p-8 shadow-lg fade-in">
+                    <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-comments text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Conversation Practice Sessions</h3>
+                    <p class="text-gray-600 mb-6">Build confidence through structured conversation practice with native-level fluency guidance.</p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-teal-600 mr-2"></i>
+                            Real-world Scenarios
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-teal-600 mr-2"></i>
+                            Pronunciation Correction
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-teal-600 mr-2"></i>
+                            Cultural Nuances
+                        </li>
+                    </ul>
+                    <div class="text-sm text-blue-600 font-semibold">Starting from $35/hour</div>
+                </div>
+                
+                <!-- Service Card 6 -->
+                <div class="service-card bg-white rounded-2xl p-8 shadow-lg fade-in">
+                    <div class="w-16 h-16 bg-teal-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-university text-2xl text-teal-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">University Entrance Prep</h3>
+                    <p class="text-gray-600 mb-6">Comprehensive preparation for university language requirements and entrance examinations.</p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-teal-600 mr-2"></i>
+                            Admission Essay Writing
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-teal-600 mr-2"></i>
+                            Interview Preparation
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-check text-teal-600 mr-2"></i>
+                            Scholarship Applications
+                        </li>
+                    </ul>
+                    <div class="text-sm text-blue-600 font-semibold">Starting from $60/hour</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Languages Section -->
+    <section id="languages" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Languages Spoken</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Fluent instruction available in multiple languages with native-level proficiency
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Arabic -->
+                <div class="language-badge bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 text-center fade-in">
+                    <div class="text-4xl mb-4">🇸🇦</div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Arabic</h3>
+                    <div class="text-sm text-gray-600 mb-3">Native</div>
+                    <div class="flex justify-center">
+                        <div class="flex space-x-1">
+                            <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
+                            <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
+                            <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
+                            <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
+                            <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- English -->
+                <div class="language-badge bg-gradient-to-br from-teal-50 to-teal-100 rounded-2xl p-6 text-center fade-in">
+                    <div class="text-4xl mb-4">🇬🇧</div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">English</h3>
+                    <div class="text-sm text-gray-600 mb-3">Native</div>
+                    <div class="flex justify-center">
+                        <div class="flex space-x-1">
+                            <div class="w-2 h-2 bg-teal-600 rounded-full"></div>
+                            <div class="w-2 h-2 bg-teal-600 rounded-full"></div>
+                            <div class="w-2 h-2 bg-teal-600 rounded-full"></div>
+                            <div class="w-2 h-2 bg-teal-600 rounded-full"></div>
+                            <div class="w-2 h-2 bg-teal-600 rounded-full"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- French -->
+                <div class="language-badge bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 text-center fade-in">
+                    <div class="text-4xl mb-4">🇫🇷</div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">French</h3>
+                    <div class="text-sm text-gray-600 mb-3">Fluent</div>
+                    <div class="flex justify-center">
+                        <div class="flex space-x-1">
+                            <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
+                            <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
+                            <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
+                            <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
+                            <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- German -->
+                <div class="language-badge bg-gradient-to-br from-teal-50 to-teal-100 rounded-2xl p-6 text-center fade-in">
+                    <div class="text-4xl mb-4">🇩🇪</div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">German</h3>
+                    <div class="text-sm text-gray-600 mb-3">Fluent</div>
+                    <div class="flex justify-center">
+                        <div class="flex space-x-1">
+                            <div class="w-2 h-2 bg-teal-600 rounded-full"></div>
+                            <div class="w-2 h-2 bg-teal-600 rounded-full"></div>
+                            <div class="w-2 h-2 bg-teal-600 rounded-full"></div>
+                            <div class="w-2 h-2 bg-teal-600 rounded-full"></div>
+                            <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Russian -->
+                <div class="language-badge bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 text-center fade-in">
+                    <div class="text-4xl mb-4">🇷🇺</div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Russian</h3>
+                    <div class="text-sm text-gray-600 mb-3">Advanced</div>
+                    <div class="flex justify-center">
+                        <div class="flex space-x-1">
+                            <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
+                            <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
+                            <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
+                            <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
+                            <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Spanish -->
+                <div class="language-badge bg-gradient-to-br from-teal-50 to-teal-100 rounded-2xl p-6 text-center fade-in">
+                    <div class="text-4xl mb-4">🇪🇸</div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Spanish</h3>
+                    <div class="text-sm text-gray-600 mb-3">Advanced</div>
+                    <div class="flex justify-center">
+                        <div class="flex space-x-1">
+                            <div class="w-2 h-2 bg-teal-600 rounded-full"></div>
+                            <div class="w-2 h-2 bg-teal-600 rounded-full"></div>
+                            <div class="w-2 h-2 bg-teal-600 rounded-full"></div>
+                            <div class="w-2 h-2 bg-teal-600 rounded-full"></div>
+                            <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Italian -->
+                <div class="language-badge bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 text-center fade-in">
+                    <div class="text-4xl mb-4">🇮🇹</div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Italian</h3>
+                    <div class="text-sm text-gray-600 mb-3">Intermediate</div>
+                    <div class="flex justify-center">
+                        <div class="flex space-x-1">
+                            <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
+                            <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
+                            <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
+                            <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+                            <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Turkish -->
+                <div class="language-badge bg-gradient-to-br from-teal-50 to-teal-100 rounded-2xl p-6 text-center fade-in">
+                    <div class="text-4xl mb-4">🇹🇷</div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Turkish</h3>
+                    <div class="text-sm text-gray-600 mb-3">Intermediate</div>
+                    <div class="flex justify-center">
+                        <div class="flex space-x-1">
+                            <div class="w-2 h-2 bg-teal-600 rounded-full"></div>
+                            <div class="w-2 h-2 bg-teal-600 rounded-full"></div>
+                            <div class="w-2 h-2 bg-teal-600 rounded-full"></div>
+                            <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+                            <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Get in Touch</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Ready to start your language learning journey? Contact me to discuss your goals and create a customized learning plan.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="fade-in">
+                    <div class="bg-white rounded-2xl p-8 shadow-lg">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Send a Message</h3>
+                        
+                        <!-- Contact Form with Formspree -->
+                        <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
+                                <input type="text" id="name" name="name" required class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+                                <input type="email" id="email" name="email" required class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            </div>
+                            
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone Number (Optional)</label>
+                                <input type="tel" id="phone" name="phone" class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            </div>
+                            
+                            <div>
+                                <label for="language" class="block text-sm font-medium text-gray-700 mb-2">Preferred Language for Communication</label>
+                                <select id="language" name="preferred_language" class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <option value="english">English</option>
+                                    <option value="arabic">Arabic</option>
+                                    <option value="french">French</option>
+                                    <option value="german">German</option>
+                                    <option value="russian">Russian</option>
+                                    <option value="spanish">Spanish</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message *</label>
+                                <textarea id="message" name="message" rows="4" required class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Tell me about your language learning goals..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full btn-gradient text-white font-semibold py-4 rounded-lg transition-all">
+                                <i class="fas fa-paper-plane mr-2"></i>
+                                Send Message
+                            </button>
+                        </form>
+                        
+                        <!-- Form status messages -->
+                        <div id="form-success" class="hidden mt-4 p-4 bg-teal-100 border border-teal-400 text-teal-700 rounded-lg">
+                            <i class="fas fa-check-circle mr-2"></i>
+                            Thank you for your message! I'll get back to you within 24 hours.
+                        </div>
+                        
+                        <div id="form-error" class="hidden mt-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg">
+                            <i class="fas fa-exclamation-circle mr-2"></i>
+                            Sorry, there was an error sending your message. Please try again or contact me directly.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Information -->
+                <div class="fade-in">
+                    <div class="space-y-8">
+                        <!-- Contact Methods -->
+                        <div class="bg-white rounded-2xl p-8 shadow-lg">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
+                            <div class="space-y-6">
+                                <div class="flex items-center">
+                                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-envelope text-blue-600"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h4 class="text-lg font-semibold text-gray-900">Email</h4>
+                                        <a href="mailto:dr.abdulrahman@example.com" class="text-blue-600 hover:text-blue-700">dr.abdulrahman@example.com</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center">
+                                    <div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center">
+                                        <i class="fab fa-whatsapp text-teal-600"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h4 class="text-lg font-semibold text-gray-900">WhatsApp</h4>
+                                        <a href="https://wa.me/1234567890" class="text-teal-600 hover:text-teal-700">+1 (234) 567-8900</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center">
+                                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-phone text-blue-600"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h4 class="text-lg font-semibold text-gray-900">Phone</h4>
+                                        <a href="tel:+1234567890" class="text-blue-600 hover:text-blue-700">+1 (234) 567-8900</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center">
+                                    <div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-map-marker-alt text-teal-600"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h4 class="text-lg font-semibold text-gray-900">Location</h4>
+                                        <p class="text-gray-600">Online & In-Person Sessions Available</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Office Hours -->
+                        <div class="bg-white rounded-2xl p-8 shadow-lg">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-6">Office Hours</h3>
+                            <div class="space-y-3">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Monday - Friday</span>
+                                    <span class="font-semibold text-gray-900">9:00 AM - 8:00 PM</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Saturday</span>
+                                    <span class="font-semibold text-gray-900">10:00 AM - 6:00 PM</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Sunday</span>
+                                    <span class="font-semibold text-gray-900">By Appointment</span>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-500 mt-4">
+                                * All times are in local timezone. International students can schedule sessions according to their preferred time zones.
+                            </p>
+                        </div>
+                        
+                        <!-- Quick Response -->
+                        <div class="bg-gradient-to-br from-blue-50 to-teal-50 rounded-2xl p-8">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Quick Response Guarantee</h3>
+                            <p class="text-gray-600 mb-4">
+                                I typically respond to all inquiries within 24 hours. For urgent matters, please contact me via WhatsApp for immediate assistance.
+                            </p>
+                            <div class="flex items-center text-sm text-teal-600">
+                                <i class="fas fa-clock mr-2"></i>
+                                Average response time: 6 hours
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- About Footer -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Dr. Abdulrahman</h3>
+                    <p class="text-gray-400 mb-4">
+                        Professional multilingual educator dedicated to helping students achieve their language learning goals through personalized instruction and proven methodologies.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="https://wa.me/1234567890" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                        </a>
+                        <a href="mailto:dr.abdulrahman@example.com" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fas fa-envelope text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About Me</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#languages" class="text-gray-400 hover:text-white transition-colors">Languages</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="assets/abdulrahman-cv.pdf" download class="text-gray-400 hover:text-white transition-colors">Download CV</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact</h3>
+                    <div class="space-y-2 text-gray-400">
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope mr-2"></i>
+                            <span>dr.abdulrahman@example.com</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fab fa-whatsapp mr-2"></i>
+                            <span>+1 (234) 567-8900</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-globe mr-2"></i>
+                            <span>Online & In-Person Sessions</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-gray-400">
+                    &copy; 2024 Dr. Abdulrahman Language Tutor. All rights reserved.
+                </p>
+                <p class="text-sm text-gray-500 mt-2">
+                    Professional language education services | IELTS Official Examiner | PhD Applied Linguistics
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        const navLinks = document.querySelectorAll('a[href^="#"]');
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    const offsetTop = targetSection.offsetTop - 70; // Account for fixed header
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all fade-in elements
+        const fadeInElements = document.querySelectorAll('.fade-in');
+        fadeInElements.forEach(el => observer.observe(el));
+        
+        // Contact form handling
+        const contactForm = document.getElementById('contact-form');
+        const formSuccess = document.getElementById('form-success');
+        const formError = document.getElementById('form-error');
+        
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Hide previous messages
+            formSuccess.classList.add('hidden');
+            formError.classList.add('hidden');
+            
+            // Get form data
+            const formData = new FormData(contactForm);
+            
+            try {
+                // Note: Replace YOUR_FORM_ID with actual Formspree form ID
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    formSuccess.classList.remove('hidden');
+                    contactForm.reset();
+                    
+                    // Scroll to success message
+                    formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                console.error('Form submission error:', error);
+                formError.classList.remove('hidden');
+                
+                // Scroll to error message
+                formError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        });
+        
+        // Form validation
+        const formInputs = document.querySelectorAll('.form-input');
+        formInputs.forEach(input => {
+            input.addEventListener('blur', validateInput);
+            input.addEventListener('input', clearValidationError);
+        });
+        
+        function validateInput(e) {
+            const input = e.target;
+            const isRequired = input.hasAttribute('required');
+            const isEmpty = !input.value.trim();
+            
+            if (isRequired && isEmpty) {
+                showInputError(input, 'This field is required');
+            } else if (input.type === 'email' && input.value && !isValidEmail(input.value)) {
+                showInputError(input, 'Please enter a valid email address');
+            } else {
+                clearInputError(input);
+            }
+        }
+        
+        function clearValidationError(e) {
+            clearInputError(e.target);
+        }
+        
+        function showInputError(input, message) {
+            clearInputError(input);
+            
+            input.classList.add('border-red-500');
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'text-red-500 text-sm mt-1';
+            errorDiv.textContent = message;
+            errorDiv.setAttribute('data-error-for', input.id);
+            
+            input.parentNode.appendChild(errorDiv);
+        }
+        
+        function clearInputError(input) {
+            input.classList.remove('border-red-500');
+            const existingError = input.parentNode.querySelector(`[data-error-for="${input.id}"]`);
+            if (existingError) {
+                existingError.remove();
+            }
+        }
+        
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+        
+        // Header scroll effect
+        const header = document.querySelector('nav');
+        let lastScrollY = window.scrollY;
+        
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+            
+            if (currentScrollY > 100) {
+                header.classList.add('shadow-lg');
+            } else {
+                header.classList.remove('shadow-lg');
+            }
+            
+            lastScrollY = currentScrollY;
+        });
+        
+        // Initialize animations on page load
+        window.addEventListener('load', () => {
+            // Trigger initial fade-in for elements in viewport
+            fadeInElements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    el.classList.add('visible');
+                }
+            });
+        });
+        
+        // Keyboard navigation accessibility
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
