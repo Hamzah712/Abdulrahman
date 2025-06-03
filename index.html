@@ -17,244 +17,19 @@
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <link rel="stylesheet" href="/styles/main.css">
+    
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-        
-        ::-webkit-scrollbar-thumb {
-            background: #3B82F6;
-            border-radius: 4px;
-        }
-        
-        ::-webkit-scrollbar-thumb:hover {
-            background: #2563EB;
-        }
-        
-        /* Smooth scroll behavior */
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        /* Custom animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Language badge hover effect */
-        .language-badge {
-            transition: all 0.3s ease;
-        }
-        
-        .language-badge:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.15);
-        }
-        
-        /* Service card hover effect */
-        .service-card {
-            transition: all 0.3s ease;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* Form styling */
-        .form-input:focus {
-            outline: none;
-            border-color: #3B82F6;
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-        }
-        
-        /* Header background blur */
-        .header-blur {
-            backdrop-filter: blur(10px);
-            background-color: rgba(248, 250, 252, 0.95);
-        }
-        
-        /* Button gradient */
-        .btn-gradient {
-            background: linear-gradient(135deg, #3B82F6 0%, #10B981 100%);
-            transition: all 0.3s ease;
-        }
-        
-        .btn-gradient:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
-        }
-        
-        /* RTL Support */
-        [dir="rtl"] {
-            text-align: right;
-        }
-        
-        [dir="rtl"] .text-left {
-            text-align: right;
-        }
-        
-        [dir="rtl"] .text-center {
-            text-align: center;
-        }
-        
-        [dir="rtl"] .flex:not(.justify-center):not(.justify-between) {
-            flex-direction: row-reverse;
-        }
-        
-        [dir="rtl"] .space-x-8 > * + * {
-            margin-left: 0;
-            margin-right: 2rem;
-        }
-        
-        [dir="rtl"] .space-x-3 > * + * {
-            margin-left: 0;
-            margin-right: 0.75rem;
-        }
-        
-        [dir="rtl"] .space-x-2 > * + * {
-            margin-left: 0;
-            margin-right: 0.5rem;
-        }
-        
-        [dir="rtl"] .mr-2 {
-            margin-right: 0;
-            margin-left: 0.5rem;
-        }
-        
-        [dir="rtl"] .mr-3 {
-            margin-right: 0;
-            margin-left: 0.75rem;
-        }
-        
-        [dir="rtl"] .ml-4 {
-            margin-left: 0;
-            margin-right: 1rem;
-        }
-        
-        [dir="rtl"] .items-start .flex-shrink-0 {
-            margin-left: 1rem;
-            margin-right: 0;
-        }
-        
-        [dir="rtl"] .grid.grid-cols-1.lg\\:grid-cols-2 {
-            direction: rtl;
-        }
-        
-        [dir="rtl"] .absolute.right-0 {
-            right: auto;
-            left: 0;
-        }
-        
-        [dir="rtl"] .rounded-lg,
-        [dir="rtl"] .rounded-2xl {
-            border-radius: 0.5rem;
-        }
-        
-        /* Language-specific fonts */
+        /* Arabic font styles */
         .lang-ar {
-            font-family: 'Amiri', 'Inter', sans-serif;
+            font-family: 'Amiri', serif !important;
+            font-size: 1.1em !important;
+            font-weight: 500 !important;
+            line-height: 1.8 !important;
         }
         
-        .lang-zh {
-            font-family: 'Noto Sans SC', 'Inter', sans-serif;
-        }
-        
-        .lang-fa {
-            font-family: 'Vazir', 'Inter', sans-serif;
-        }
-        
-        /* Dark Mode Styles */
-        .dark {
-            color-scheme: dark;
-        }
-        
-        .dark body {
-            background-color: #111827;
-            color: #f9fafb;
-        }
-        
-        .dark .header-blur {
-            background-color: rgba(17, 24, 39, 0.95);
-            border-color: #374151;
-        }
-        
-        .dark .bg-white {
-            background-color: #1f2937;
-        }
-        
-        .dark .bg-gray-50 {
-            background-color: #111827;
-        }
-        
-        .dark .text-gray-900 {
-            color: #f9fafb;
-        }
-        
-        .dark .text-gray-700 {
-            color: #d1d5db;
-        }
-        
-        .dark .text-gray-600 {
-            color: #9ca3af;
-        }
-        
-        .dark .text-gray-500 {
-            color: #6b7280;
-        }
-        
-        .dark .text-gray-400 {
-            color: #9ca3af;
-        }
-        
-        .dark .border-gray-200 {
-            border-color: #374151;
-        }
-        
-        .dark .from-blue-50 {
-            --tw-gradient-from: #1e293b;
-        }
-        
-        .dark .to-teal-50 {
-            --tw-gradient-to: #134e4a;
-        }
-        
-        .dark .shadow-lg {
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
-        }
-        
-        .dark .shadow-2xl {
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-        }
-        
-        /* Testimonial carousel */
-        .testimonial-card {
-            min-height: 280px;
-            transition: all 0.3s ease;
-        }
-        
-        .testimonial-carousel {
-            scroll-behavior: smooth;
-        }
-        
-        .testimonial-carousel::-webkit-scrollbar {
-            display: none;
+        .lang-ar h1, .lang-ar h2, .lang-ar h3, .lang-ar h4, .lang-ar h5, .lang-ar h6 {
+            font-weight: 700 !important;
         }
     </style>
 </head>
@@ -264,11 +39,11 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex-shrink-0">
-                    <h1 class="text-xl font-bold text-blue-600">Dr. Abdulrahman</h1>
+                    <h1 class="text-xl font-bold text-blue-600" data-translate="header_title">Dr. Abdulrahman</h1>
                 </div>
                 
                 <!-- Desktop Navigation -->
-                <div class="hidden md:flex items-center space-x-8">
+                <div class="hidden md:flex items-center space-x-8 rtl:space-x-reverse">
                     <div class="flex space-x-8">
                         <a href="#home" class="text-gray-700 hover:text-blue-600 font-medium transition-colors" data-translate="nav_home">Home</a>
                         <a href="#about" class="text-gray-700 hover:text-blue-600 font-medium transition-colors" data-translate="nav_about">About</a>
@@ -278,7 +53,7 @@
                     </div>
                     
                     <!-- Dark Mode Toggle -->
-                    <button id="dark-mode-toggle" class="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition-colors">
+                    <button id="dark-mode-toggle" class="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition-colors rtl:mr-4">
                         <i class="fas fa-moon text-gray-700 dark:text-gray-300" id="dark-mode-icon"></i>
                     </button>
                     
@@ -286,34 +61,34 @@
                     <div class="relative">
                         <button id="language-btn" class="flex items-center space-x-2 px-3 py-2 bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 rounded-lg transition-colors">
                             <span id="current-flag" class="text-lg">🇺🇸</span>
-                            <span id="current-lang" class="text-sm font-medium text-gray-700 dark:text-gray-300">EN</span>
+                            <span id="current-lang" class="text-sm font-medium text-gray-700 dark:text-gray-300" data-translate="current_language">EN</span>
                             <i class="fas fa-chevron-down text-xs text-gray-500 dark:text-gray-400"></i>
                         </button>
                         
-                        <div id="language-dropdown" class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 hidden z-50">
-                            <button class="language-option w-full px-4 py-2 text-left hover:bg-gray-50 flex items-center space-x-3" data-lang="en">
+                        <div id="language-dropdown" class="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 py-2 hidden z-50 transform transition-all duration-200 ease-in-out opacity-0 scale-95">
+                            <button class="language-option w-full px-4 py-2 text-left hover:bg-gray-50 dark:hover:bg-gray-700 flex items-center space-x-3 transition-colors" data-lang="en">
                                 <span class="text-lg">🇺🇸</span>
-                                <span class="font-medium">English</span>
+                                <span class="font-medium text-gray-900 dark:text-gray-100">English</span>
                             </button>
-                            <button class="language-option w-full px-4 py-2 text-left hover:bg-gray-50 flex items-center space-x-3" data-lang="ar">
+                            <button class="language-option w-full px-4 py-2 text-left hover:bg-gray-50 dark:hover:bg-gray-700 flex items-center space-x-3 transition-colors" data-lang="ar">
                                 <span class="text-lg">🇸🇦</span>
-                                <span class="font-medium">العربية</span>
+                                <span class="font-medium text-gray-900 dark:text-gray-100">العربية</span>
                             </button>
-                            <button class="language-option w-full px-4 py-2 text-left hover:bg-gray-50 flex items-center space-x-3" data-lang="zh">
+                            <button class="language-option w-full px-4 py-2 text-left hover:bg-gray-50 dark:hover:bg-gray-700 flex items-center space-x-3 transition-colors" data-lang="zh">
                                 <span class="text-lg">🇨🇳</span>
-                                <span class="font-medium">中文</span>
+                                <span class="font-medium text-gray-900 dark:text-gray-100">中文</span>
                             </button>
-                            <button class="language-option w-full px-4 py-2 text-left hover:bg-gray-50 flex items-center space-x-3" data-lang="tr">
+                            <button class="language-option w-full px-4 py-2 text-left hover:bg-gray-50 dark:hover:bg-gray-700 flex items-center space-x-3 transition-colors" data-lang="tr">
                                 <span class="text-lg">🇹🇷</span>
-                                <span class="font-medium">Türkçe</span>
+                                <span class="font-medium text-gray-900 dark:text-gray-100">Türkçe</span>
                             </button>
-                            <button class="language-option w-full px-4 py-2 text-left hover:bg-gray-50 flex items-center space-x-3" data-lang="fa">
+                            <button class="language-option w-full px-4 py-2 text-left hover:bg-gray-50 dark:hover:bg-gray-700 flex items-center space-x-3 transition-colors" data-lang="fa">
                                 <span class="text-lg">🇮🇷</span>
-                                <span class="font-medium">فارسی</span>
+                                <span class="font-medium text-gray-900 dark:text-gray-100">فارسی</span>
                             </button>
-                            <button class="language-option w-full px-4 py-2 text-left hover:bg-gray-50 flex items-center space-x-3" data-lang="ru">
+                            <button class="language-option w-full px-4 py-2 text-left hover:bg-gray-50 dark:hover:bg-gray-700 flex items-center space-x-3 transition-colors" data-lang="ru">
                                 <span class="text-lg">🇷🇺</span>
-                                <span class="font-medium">Русский</span>
+                                <span class="font-medium text-gray-900 dark:text-gray-100">Русский</span>
                             </button>
                         </div>
                     </div>
@@ -339,38 +114,38 @@
                 
                 <!-- Mobile Language Switcher -->
                 <div class="px-3 py-2">
-                    <button id="mobile-language-btn" class="w-full flex items-center justify-between px-3 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors">
+                    <button id="mobile-language-btn" class="w-full flex items-center justify-between px-3 py-2 bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 rounded-lg transition-colors">
                         <div class="flex items-center space-x-2">
                             <span id="mobile-current-flag" class="text-lg">🇺🇸</span>
-                            <span id="mobile-current-lang" class="text-sm font-medium text-gray-700">English</span>
+                            <span id="mobile-current-lang" class="text-sm font-medium text-gray-700 dark:text-gray-300" data-translate="mobile_current_language">English</span>
                         </div>
-                        <i class="fas fa-chevron-down text-xs text-gray-500"></i>
+                        <i class="fas fa-chevron-down text-xs text-gray-500 dark:text-gray-400 transition-transform duration-200"></i>
                     </button>
                     
-                    <div id="mobile-language-dropdown" class="mt-2 hidden">
-                        <button class="mobile-language-option w-full px-3 py-2 text-left hover:bg-gray-50 flex items-center space-x-3 rounded" data-lang="en">
+                    <div id="mobile-language-dropdown" class="mt-2 hidden transform transition-all duration-200 ease-in-out origin-top opacity-0 scale-95">
+                        <button class="mobile-language-option w-full px-3 py-2 text-left hover:bg-gray-50 dark:hover:bg-gray-700 flex items-center space-x-3 rounded transition-colors" data-lang="en">
                             <span class="text-lg">🇺🇸</span>
-                            <span class="font-medium">English</span>
+                            <span class="font-medium text-gray-900 dark:text-gray-100">English</span>
                         </button>
-                        <button class="mobile-language-option w-full px-3 py-2 text-left hover:bg-gray-50 flex items-center space-x-3 rounded" data-lang="ar">
+                        <button class="mobile-language-option w-full px-3 py-2 text-left hover:bg-gray-50 dark:hover:bg-gray-700 flex items-center space-x-3 rounded transition-colors" data-lang="ar">
                             <span class="text-lg">🇸🇦</span>
-                            <span class="font-medium">العربية</span>
+                            <span class="font-medium text-gray-900 dark:text-gray-100">العربية</span>
                         </button>
-                        <button class="mobile-language-option w-full px-3 py-2 text-left hover:bg-gray-50 flex items-center space-x-3 rounded" data-lang="zh">
+                        <button class="mobile-language-option w-full px-3 py-2 text-left hover:bg-gray-50 dark:hover:bg-gray-700 flex items-center space-x-3 rounded transition-colors" data-lang="zh">
                             <span class="text-lg">🇨🇳</span>
-                            <span class="font-medium">中文</span>
+                            <span class="font-medium text-gray-900 dark:text-gray-100">中文</span>
                         </button>
-                        <button class="mobile-language-option w-full px-3 py-2 text-left hover:bg-gray-50 flex items-center space-x-3 rounded" data-lang="tr">
+                        <button class="mobile-language-option w-full px-3 py-2 text-left hover:bg-gray-50 dark:hover:bg-gray-700 flex items-center space-x-3 rounded transition-colors" data-lang="tr">
                             <span class="text-lg">🇹🇷</span>
-                            <span class="font-medium">Türkçe</span>
+                            <span class="font-medium text-gray-900 dark:text-gray-100">Türkçe</span>
                         </button>
-                        <button class="mobile-language-option w-full px-3 py-2 text-left hover:bg-gray-50 flex items-center space-x-3 rounded" data-lang="fa">
+                        <button class="mobile-language-option w-full px-3 py-2 text-left hover:bg-gray-50 dark:hover:bg-gray-700 flex items-center space-x-3 rounded transition-colors" data-lang="fa">
                             <span class="text-lg">🇮🇷</span>
-                            <span class="font-medium">فارسی</span>
+                            <span class="font-medium text-gray-900 dark:text-gray-100">فارسی</span>
                         </button>
-                        <button class="mobile-language-option w-full px-3 py-2 text-left hover:bg-gray-50 flex items-center space-x-3 rounded" data-lang="ru">
+                        <button class="mobile-language-option w-full px-3 py-2 text-left hover:bg-gray-50 dark:hover:bg-gray-700 flex items-center space-x-3 rounded transition-colors" data-lang="ru">
                             <span class="text-lg">🇷🇺</span>
-                            <span class="font-medium">Русский</span>
+                            <span class="font-medium text-gray-900 dark:text-gray-100">Русский</span>
                         </button>
                     </div>
                 </div>
@@ -424,8 +199,8 @@
                         <div class="w-80 h-80 mx-auto bg-gradient-to-br from-blue-100 to-teal-100 rounded-full flex items-center justify-center shadow-2xl">
                             <div class="text-center">
                                 <i class="fas fa-user-graduate text-6xl text-blue-600 mb-4"></i>
-                                <div class="text-gray-600 font-medium">Professional Photo</div>
-                                <div class="text-sm text-gray-500">Dr. Abdulrahman</div>
+                                <div class="text-gray-600 font-medium" data-translate="profile_photo_text">Professional Photo</div>
+                                <div class="text-sm text-gray-500" data-translate="profile_name">Dr. Abdulrahman</div>
                             </div>
                         </div>
                         
@@ -456,31 +231,37 @@
                 <div class="fade-in">
                     <h3 class="text-2xl font-bold text-gray-900 mb-6" data-translate="about_philosophy_title">Academic Excellence & Teaching Philosophy</h3>
                     <div class="space-y-6">
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                                <i class="fas fa-graduation-cap text-blue-600"></i>
+                        <div class="flex items-start justify-start rtl:justify-end">
+                            <div class="flex-shrink-0 order-1 rtl:order-2">
+                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-graduation-cap text-blue-600"></i>
+                                </div>
                             </div>
-                            <div class="ml-4">
+                            <div class="ml-4 rtl:ml-0 rtl:mr-4 order-2 rtl:order-1 flex-1">
                                 <h4 class="text-lg font-semibold text-gray-900" data-translate="about_expertise_title">University-Level Expertise</h4>
                                 <p class="text-gray-600" data-translate="about_expertise_desc">PhD in Applied Linguistics with specialization in multilingual education and second language acquisition.</p>
                             </div>
                         </div>
                         
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center">
-                                <i class="fas fa-brain text-teal-600"></i>
+                        <div class="flex items-start justify-start rtl:justify-end">
+                            <div class="flex-shrink-0 order-1 rtl:order-2">
+                                <div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-brain text-teal-600"></i>
+                                </div>
                             </div>
-                            <div class="ml-4">
+                            <div class="ml-4 rtl:ml-0 rtl:mr-4 order-2 rtl:order-1 flex-1">
                                 <h4 class="text-lg font-semibold text-gray-900" data-translate="about_approach_title">Cognitive Learning Approach</h4>
                                 <p class="text-gray-600" data-translate="about_approach_desc">Utilizing modern neurolinguistic methods to accelerate language acquisition and retention.</p>
                             </div>
                         </div>
                         
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                                <i class="fas fa-users text-blue-600"></i>
+                        <div class="flex items-start justify-start rtl:justify-end">
+                            <div class="flex-shrink-0 order-1 rtl:order-2">
+                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-users text-blue-600"></i>
+                                </div>
                             </div>
-                            <div class="ml-4">
+                            <div class="ml-4 rtl:ml-0 rtl:mr-4 order-2 rtl:order-1 flex-1">
                                 <h4 class="text-lg font-semibold text-gray-900" data-translate="about_instruction_title">Personalized Instruction</h4>
                                 <p class="text-gray-600" data-translate="about_instruction_desc">Tailored teaching methods adapted to individual learning styles and cultural backgrounds.</p>
                             </div>
@@ -492,32 +273,32 @@
                     <div class="bg-gradient-to-br from-blue-50 to-teal-50 rounded-2xl p-8">
                         <h3 class="text-2xl font-bold text-gray-900 mb-6" data-translate="about_credentials_title">Credentials & Achievements</h3>
                         <div class="space-y-4">
-                            <div class="flex items-center">
-                                <i class="fas fa-check-circle text-teal-600 mr-3"></i>
-                                <span class="text-gray-700" data-translate="credential_phd">PhD in Applied Linguistics - University of Oxford</span>
+                            <div class="flex items-center justify-start rtl:justify-end">
+                                <span class="text-gray-700 order-2 rtl:order-1 flex-1 ml-4 rtl:ml-0 rtl:mr-4" data-translate="credential_phd">PhD in Applied Linguistics - University of Oxford</span>
+                                <i class="fas fa-check-circle text-teal-600 order-1 rtl:order-2 flex-shrink-0"></i>
                             </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-check-circle text-teal-600 mr-3"></i>
-                                <span class="text-gray-700" data-translate="credential_celta">CELTA Certified English Language Teacher</span>
+                            <div class="flex items-center justify-start rtl:justify-end">
+                                <span class="text-gray-700 order-2 rtl:order-1 flex-1 ml-4 rtl:ml-0 rtl:mr-4" data-translate="credential_celta">CELTA Certified English Language Teacher</span>
+                                <i class="fas fa-check-circle text-teal-600 order-1 rtl:order-2 flex-shrink-0"></i>
                             </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-check-circle text-teal-600 mr-3"></i>
-                                <span class="text-gray-700" data-translate="credential_ielts">IELTS Official Examiner Certification</span>
+                            <div class="flex items-center justify-start rtl:justify-end">
+                                <span class="text-gray-700 order-2 rtl:order-1 flex-1 ml-4 rtl:ml-0 rtl:mr-4" data-translate="credential_ielts">IELTS Official Examiner Certification</span>
+                                <i class="fas fa-check-circle text-teal-600 order-1 rtl:order-2 flex-shrink-0"></i>
                             </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-check-circle text-teal-600 mr-3"></i>
-                                <span class="text-gray-700" data-translate="credential_research">Published Research in Language Acquisition</span>
+                            <div class="flex items-center justify-start rtl:justify-end">
+                                <span class="text-gray-700 order-2 rtl:order-1 flex-1 ml-4 rtl:ml-0 rtl:mr-4" data-translate="credential_research">Published Research in Language Acquisition</span>
+                                <i class="fas fa-check-circle text-teal-600 order-1 rtl:order-2 flex-shrink-0"></i>
                             </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-check-circle text-teal-600 mr-3"></i>
-                                <span class="text-gray-700" data-translate="credential_lecturer">Guest Lecturer at International Universities</span>
+                            <div class="flex items-center justify-start rtl:justify-end">
+                                <span class="text-gray-700 order-2 rtl:order-1 flex-1 ml-4 rtl:ml-0 rtl:mr-4" data-translate="credential_lecturer">Guest Lecturer at International Universities</span>
+                                <i class="fas fa-check-circle text-teal-600 order-1 rtl:order-2 flex-shrink-0"></i>
                             </div>
                         </div>
                         
                         <!-- CV Download Button -->
                         <div class="mt-8">
-                            <a href="assets/abdulrahman-cv.pdf" download class="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">
-                                <i class="fas fa-download mr-2"></i>
+                            <a href="assets/abdulrahman-cv.pdf" download class="inline-flex items-center rtl:flex-row-reverse px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">
+                                <i class="fas fa-download mr-2 rtl:mr-0 rtl:ml-2"></i>
                                 <span data-translate="btn_download_cv">Download Complete CV</span>
                             </a>
                         </div>
@@ -546,20 +327,20 @@
                     <h3 class="text-xl font-bold text-gray-900 mb-4" data-translate="service1_title">Arabic for Non-Native Speakers</h3>
                     <p class="text-gray-600 mb-6" data-translate="service1_desc">Master Modern Standard Arabic and regional dialects with culturally immersive teaching methods.</p>
                     <ul class="space-y-2 mb-6">
-                        <li class="flex items-center text-sm text-gray-600">
-                            <i class="fas fa-check text-teal-600 mr-2"></i>
+                        <li class="flex items-center text-sm text-gray-600" style="direction: ltr;">
+                            <i class="fas fa-check text-teal-600 mr-2 flex-shrink-0"></i>
                             <span data-translate="service1_feature1">Classical & Modern Arabic</span>
                         </li>
-                        <li class="flex items-center text-sm text-gray-600">
-                            <i class="fas fa-check text-teal-600 mr-2"></i>
+                        <li class="flex items-center text-sm text-gray-600" style="direction: ltr;">
+                            <i class="fas fa-check text-teal-600 mr-2 flex-shrink-0"></i>
                             <span data-translate="service1_feature2">Cultural Context Integration</span>
                         </li>
-                        <li class="flex items-center text-sm text-gray-600">
-                            <i class="fas fa-check text-teal-600 mr-2"></i>
+                        <li class="flex items-center text-sm text-gray-600" style="direction: ltr;">
+                            <i class="fas fa-check text-teal-600 mr-2 flex-shrink-0"></i>
                             <span data-translate="service1_feature3">Business Arabic Available</span>
                         </li>
                     </ul>
-                    <div class="text-sm text-blue-600 font-semibold" data-translate="price_from">Starting from $40/hour</div>
+                    <div class="text-sm text-blue-600 font-semibold" data-translate="service1_price">Starting from $40/hour</div>
                 </div>
                 
                 <!-- Service Card 2 -->
@@ -570,20 +351,20 @@
                     <h3 class="text-xl font-bold text-gray-900 mb-4" data-translate="service2_title">IELTS/TOEFL Preparation</h3>
                     <p class="text-gray-600 mb-6" data-translate="service2_desc">Comprehensive test preparation with proven strategies for achieving your target scores.</p>
                     <ul class="space-y-2 mb-6">
-                        <li class="flex items-center text-sm text-gray-600">
-                            <i class="fas fa-check text-teal-600 mr-2"></i>
+                        <li class="flex items-center text-sm text-gray-600" style="direction: ltr;">
+                            <i class="fas fa-check text-teal-600 mr-2 flex-shrink-0"></i>
                             <span data-translate="service2_feature1">Speaking & Writing Focus</span>
                         </li>
-                        <li class="flex items-center text-sm text-gray-600">
-                            <i class="fas fa-check text-teal-600 mr-2"></i>
+                        <li class="flex items-center text-sm text-gray-600" style="direction: ltr;">
+                            <i class="fas fa-check text-teal-600 mr-2 flex-shrink-0"></i>
                             <span data-translate="service2_feature2">Mock Tests & Feedback</span>
                         </li>
-                        <li class="flex items-center text-sm text-gray-600">
-                            <i class="fas fa-check text-teal-600 mr-2"></i>
+                        <li class="flex items-center text-sm text-gray-600" style="direction: ltr;">
+                            <i class="fas fa-check text-teal-600 mr-2 flex-shrink-0"></i>
                             <span data-translate="service2_feature3">Score Guarantee Program</span>
                         </li>
                     </ul>
-                    <div class="text-sm text-blue-600 font-semibold" data-translate="price_from">Starting from $40/hour</div>
+                    <div class="text-sm text-blue-600 font-semibold" data-translate="service2_price">Starting from $40/hour</div>
                 </div>
                 
                 <!-- Service Card 3 -->
@@ -591,23 +372,23 @@
                     <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
                         <i class="fas fa-pen-fancy text-2xl text-blue-600"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">Academic Writing Coaching</h3>
-                    <p class="text-gray-600 mb-6">Enhance your academic writing skills for essays, dissertations, and research papers.</p>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4" data-translate="service3_title">Academic Writing Coaching</h3>
+                    <p class="text-gray-600 mb-6" data-translate="service3_desc">Enhance your academic writing skills for essays, dissertations, and research papers.</p>
                     <ul class="space-y-2 mb-6">
-                        <li class="flex items-center text-sm text-gray-600">
-                            <i class="fas fa-check text-teal-600 mr-2"></i>
-                            Research Methodology
+                        <li class="flex items-center text-sm text-gray-600" style="direction: ltr;">
+                            <i class="fas fa-check text-teal-600 mr-2 flex-shrink-0"></i>
+                            <span data-translate="service3_feature1">Research Methodology</span>
                         </li>
-                        <li class="flex items-center text-sm text-gray-600">
-                            <i class="fas fa-check text-teal-600 mr-2"></i>
-                            Citation & Referencing
+                        <li class="flex items-center text-sm text-gray-600" style="direction: ltr;">
+                            <i class="fas fa-check text-teal-600 mr-2 flex-shrink-0"></i>
+                            <span data-translate="service3_feature2">Citation & Referencing</span>
                         </li>
-                        <li class="flex items-center text-sm text-gray-600">
-                            <i class="fas fa-check text-teal-600 mr-2"></i>
-                            Thesis Support Available
+                        <li class="flex items-center text-sm text-gray-600" style="direction: ltr;">
+                            <i class="fas fa-check text-teal-600 mr-2 flex-shrink-0"></i>
+                            <span data-translate="service3_feature3">Thesis Support Available</span>
                         </li>
                     </ul>
-                    <div class="text-sm text-blue-600 font-semibold">Starting from $45/hour</div>
+                    <div class="text-sm text-blue-600 font-semibold" data-translate="service3_price">Starting from $45/hour</div>
                 </div>
                 
                 <!-- Service Card 4 -->
@@ -615,23 +396,23 @@
                     <div class="w-16 h-16 bg-teal-100 rounded-lg flex items-center justify-center mb-6">
                         <i class="fas fa-briefcase text-2xl text-teal-600"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">Business Language Skills</h3>
-                    <p class="text-gray-600 mb-6">Professional language training for international business communication and presentations.</p>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4" data-translate="service4_title">Business Language Skills</h3>
+                    <p class="text-gray-600 mb-6" data-translate="service4_desc">Professional language training for international business communication and presentations.</p>
                     <ul class="space-y-2 mb-6">
-                        <li class="flex items-center text-sm text-gray-600">
-                            <i class="fas fa-check text-teal-600 mr-2"></i>
-                            Corporate Communication
+                        <li class="flex items-center text-sm text-gray-600" style="direction: ltr;">
+                            <i class="fas fa-check text-teal-600 mr-2 flex-shrink-0"></i>
+                            <span data-translate="service4_feature1">Corporate Communication</span>
                         </li>
-                        <li class="flex items-center text-sm text-gray-600">
-                            <i class="fas fa-check text-teal-600 mr-2"></i>
-                            Presentation Skills
+                        <li class="flex items-center text-sm text-gray-600" style="direction: ltr;">
+                            <i class="fas fa-check text-teal-600 mr-2 flex-shrink-0"></i>
+                            <span data-translate="service4_feature2">Presentation Skills</span>
                         </li>
-                        <li class="flex items-center text-sm text-gray-600">
-                            <i class="fas fa-check text-teal-600 mr-2"></i>
-                            Industry-Specific Vocabulary
+                        <li class="flex items-center text-sm text-gray-600" style="direction: ltr;">
+                            <i class="fas fa-check text-teal-600 mr-2 flex-shrink-0"></i>
+                            <span data-translate="service4_feature3">Industry-Specific Vocabulary</span>
                         </li>
                     </ul>
-                    <div class="text-sm text-blue-600 font-semibold">Starting from $55/hour</div>
+                    <div class="text-sm text-blue-600 font-semibold" data-translate="service4_price">Starting from $55/hour</div>
                 </div>
                 
                 <!-- Service Card 5 -->
@@ -639,23 +420,23 @@
                     <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
                         <i class="fas fa-comments text-2xl text-blue-600"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">Conversation Practice Sessions</h3>
-                    <p class="text-gray-600 mb-6">Build confidence through structured conversation practice with native-level fluency guidance.</p>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4" data-translate="service5_title">Conversation Practice Sessions</h3>
+                    <p class="text-gray-600 mb-6" data-translate="service5_desc">Build confidence through structured conversation practice with native-level fluency guidance.</p>
                     <ul class="space-y-2 mb-6">
-                        <li class="flex items-center text-sm text-gray-600">
-                            <i class="fas fa-check text-teal-600 mr-2"></i>
-                            Real-world Scenarios
+                        <li class="flex items-center text-sm text-gray-600" style="direction: ltr;">
+                            <i class="fas fa-check text-teal-600 mr-2 flex-shrink-0"></i>
+                            <span data-translate="service5_feature1">Real-world Scenarios</span>
                         </li>
-                        <li class="flex items-center text-sm text-gray-600">
-                            <i class="fas fa-check text-teal-600 mr-2"></i>
-                            Pronunciation Correction
+                        <li class="flex items-center text-sm text-gray-600" style="direction: ltr;">
+                            <i class="fas fa-check text-teal-600 mr-2 flex-shrink-0"></i>
+                            <span data-translate="service5_feature2">Pronunciation Correction</span>
                         </li>
-                        <li class="flex items-center text-sm text-gray-600">
-                            <i class="fas fa-check text-teal-600 mr-2"></i>
-                            Cultural Nuances
+                        <li class="flex items-center text-sm text-gray-600" style="direction: ltr;">
+                            <i class="fas fa-check text-teal-600 mr-2 flex-shrink-0"></i>
+                            <span data-translate="service5_feature3">Cultural Nuances</span>
                         </li>
                     </ul>
-                    <div class="text-sm text-blue-600 font-semibold">Starting from $35/hour</div>
+                    <div class="text-sm text-blue-600 font-semibold" data-translate="service5_price">Starting from $35/hour</div>
                 </div>
                 
                 <!-- Service Card 6 -->
@@ -663,23 +444,23 @@
                     <div class="w-16 h-16 bg-teal-100 rounded-lg flex items-center justify-center mb-6">
                         <i class="fas fa-university text-2xl text-teal-600"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">University Entrance Prep</h3>
-                    <p class="text-gray-600 mb-6">Comprehensive preparation for university language requirements and entrance examinations.</p>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4" data-translate="service6_title">University Entrance Prep</h3>
+                    <p class="text-gray-600 mb-6" data-translate="service6_desc">Comprehensive preparation for university language requirements and entrance examinations.</p>
                     <ul class="space-y-2 mb-6">
-                        <li class="flex items-center text-sm text-gray-600">
-                            <i class="fas fa-check text-teal-600 mr-2"></i>
-                            Admission Essay Writing
+                        <li class="flex items-center text-sm text-gray-600" style="direction: ltr;">
+                            <i class="fas fa-check text-teal-600 mr-2 flex-shrink-0"></i>
+                            <span data-translate="service6_feature1">Admission Essay Writing</span>
                         </li>
-                        <li class="flex items-center text-sm text-gray-600">
-                            <i class="fas fa-check text-teal-600 mr-2"></i>
-                            Interview Preparation
+                        <li class="flex items-center text-sm text-gray-600" style="direction: ltr;">
+                            <i class="fas fa-check text-teal-600 mr-2 flex-shrink-0"></i>
+                            <span data-translate="service6_feature2">Interview Preparation</span>
                         </li>
-                        <li class="flex items-center text-sm text-gray-600">
-                            <i class="fas fa-check text-teal-600 mr-2"></i>
-                            Scholarship Applications
+                        <li class="flex items-center text-sm text-gray-600" style="direction: ltr;">
+                            <i class="fas fa-check text-teal-600 mr-2 flex-shrink-0"></i>
+                            <span data-translate="service6_feature3">Scholarship Applications</span>
                         </li>
                     </ul>
-                    <div class="text-sm text-blue-600 font-semibold">Starting from $60/hour</div>
+                    <div class="text-sm text-blue-600 font-semibold" data-translate="service6_price">Starting from $60/hour</div>
                 </div>
             </div>
         </div>
@@ -705,8 +486,8 @@
                                 <span class="text-blue-600 dark:text-blue-400 font-bold text-lg">A</span>
                             </div>
                             <div>
-                                <h4 class="font-semibold text-gray-900 dark:text-white">Ahmed Al-Rashid</h4>
-                                <p class="text-sm text-gray-500 dark:text-gray-400">Business Executive, UAE</p>
+                                <h4 class="font-semibold text-gray-900 dark:text-white rtl:text-left" data-translate="testimonial_name_1">Ahmed Al-Rashid</h4>
+                                <p class="text-sm text-gray-500 dark:text-gray-400 rtl:text-left" data-translate="testimonial_title_1">Business Executive, UAE</p>
                             </div>
                         </div>
                         <div class="flex mb-4">
@@ -716,11 +497,11 @@
                             <i class="fas fa-star text-yellow-400"></i>
                             <i class="fas fa-star text-yellow-400"></i>
                         </div>
-                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed rtl:text-right" data-translate="testimonial_quote_1">
                             "Dr. Abdulrahman's approach to teaching English for business has been transformative. His cultural insights and practical exercises helped me excel in international negotiations."
                         </p>
                     </div>
-
+            
                     <!-- Testimonial 2 -->
                     <div class="testimonial-card flex-shrink-0 w-80 bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-100 dark:border-gray-700">
                         <div class="flex items-center mb-4">
@@ -728,8 +509,8 @@
                                 <span class="text-teal-600 dark:text-teal-400 font-bold text-lg">M</span>
                             </div>
                             <div>
-                                <h4 class="font-semibold text-gray-900 dark:text-white">Maria Chen</h4>
-                                <p class="text-sm text-gray-500 dark:text-gray-400">PhD Student, China</p>
+                                <h4 class="font-semibold text-gray-900 dark:text-white rtl:text-left" data-translate="testimonial_name_2">Maria Chen</h4>
+                                <p class="text-sm text-gray-500 dark:text-gray-400 rtl:text-left" data-translate="testimonial_title_2">PhD Student, China</p>
                             </div>
                         </div>
                         <div class="flex mb-4">
@@ -739,11 +520,11 @@
                             <i class="fas fa-star text-yellow-400"></i>
                             <i class="fas fa-star text-yellow-400"></i>
                         </div>
-                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed rtl:text-right" data-translate="testimonial_quote_2">
                             "I achieved a 7.5 IELTS score thanks to Dr. Abdulrahman's structured approach. His mock tests and personalized feedback were invaluable for my university application."
                         </p>
                     </div>
-
+            
                     <!-- Testimonial 3 -->
                     <div class="testimonial-card flex-shrink-0 w-80 bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-100 dark:border-gray-700">
                         <div class="flex items-center mb-4">
@@ -751,8 +532,8 @@
                                 <span class="text-purple-600 dark:text-purple-400 font-bold text-lg">L</span>
                             </div>
                             <div>
-                                <h4 class="font-semibold text-gray-900 dark:text-white">Lisa Schmidt</h4>
-                                <p class="text-sm text-gray-500 dark:text-gray-400">Teacher, Germany</p>
+                                <h4 class="font-semibold text-gray-900 dark:text-white rtl:text-left" data-translate="testimonial_name_3">Lisa Schmidt</h4>
+                                <p class="text-sm text-gray-500 dark:text-gray-400 rtl:text-left" data-translate="testimonial_title_3">Teacher, Germany</p>
                             </div>
                         </div>
                         <div class="flex mb-4">
@@ -762,11 +543,11 @@
                             <i class="fas fa-star text-yellow-400"></i>
                             <i class="fas fa-star text-yellow-400"></i>
                         </div>
-                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed rtl:text-right" data-translate="testimonial_quote_3">
                             "Learning Arabic seemed impossible until I found Dr. Abdulrahman. His patient teaching style and cultural immersion methods made the language come alive for me."
                         </p>
                     </div>
-
+            
                     <!-- Testimonial 4 -->
                     <div class="testimonial-card flex-shrink-0 w-80 bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-100 dark:border-gray-700">
                         <div class="flex items-center mb-4">
@@ -774,8 +555,8 @@
                                 <span class="text-green-600 dark:text-green-400 font-bold text-lg">R</span>
                             </div>
                             <div>
-                                <h4 class="font-semibold text-gray-900 dark:text-white">Reza Mohammadi</h4>
-                                <p class="text-sm text-gray-500 dark:text-gray-400">Engineer, Iran</p>
+                                <h4 class="font-semibold text-gray-900 dark:text-white rtl:text-left" data-translate="testimonial_name_4">Reza Mohammadi</h4>
+                                <p class="text-sm text-gray-500 dark:text-gray-400 rtl:text-left" data-translate="testimonial_title_4">Engineer, Iran</p>
                             </div>
                         </div>
                         <div class="flex mb-4">
@@ -785,14 +566,14 @@
                             <i class="fas fa-star text-yellow-400"></i>
                             <i class="fas fa-star text-yellow-400"></i>
                         </div>
-                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed rtl:text-right" data-translate="testimonial_quote_4">
                             "Dr. Abdulrahman's expertise in multiple languages is remarkable. He helped me improve my technical English for international conferences with great success."
                         </p>
                     </div>
                 </div>
-
+            
                 <!-- Carousel Navigation -->
-                <div class="flex justify-center mt-8 space-x-4">
+                <div class="flex justify-center mt-8 space-x-4" dir="ltr">
                     <button id="prev-testimonial" class="p-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full transition-colors">
                         <i class="fas fa-chevron-left"></i>
                     </button>
@@ -808,8 +589,8 @@
     <section id="languages" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 fade-in">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">Languages Spoken</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4" data-translate="languages_title">Languages Spoken</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-translate="languages_subtitle">
                     Fluent instruction available in multiple languages with native-level proficiency
                 </p>
             </div>
@@ -818,8 +599,8 @@
                 <!-- Arabic -->
                 <div class="language-badge bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 text-center fade-in">
                     <div class="text-4xl mb-4">🇸🇦</div>
-                    <h3 class="text-lg font-bold text-gray-900 mb-2">Arabic</h3>
-                    <div class="text-sm text-gray-600 mb-3">Native</div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2" data-translate="language_arabic">Arabic</h3>
+                    <div class="text-sm text-gray-600 mb-3" data-translate="proficiency_native">Native</div>
                     <div class="flex justify-center">
                         <div class="flex space-x-1">
                             <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
@@ -832,10 +613,10 @@
                 </div>
                 
                 <!-- English -->
-                <div class="language-badge bg-gradient-to-br from-teal-50 to-teal-100 rounded-2xl p-6 text-center fade-in">
+                <div class="language-badge bg-gradient-to-br from-teal-50 to-teal-100 rounded-2xl p-6 text-center fade-in text-black">
                     <div class="text-4xl mb-4">🇬🇧</div>
-                    <h3 class="text-lg font-bold text-gray-900 mb-2">English</h3>
-                    <div class="text-sm text-gray-600 mb-3">Native</div>
+                    <h3 class="text-lg font-bold mb-2" data-translate="language_english">English</h3>
+                    <div class="text-sm mb-3" data-translate="proficiency_native">Native</div>
                     <div class="flex justify-center">
                         <div class="flex space-x-1">
                             <div class="w-2 h-2 bg-teal-600 rounded-full"></div>
@@ -850,8 +631,8 @@
                 <!-- French -->
                 <div class="language-badge bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 text-center fade-in">
                     <div class="text-4xl mb-4">🇫🇷</div>
-                    <h3 class="text-lg font-bold text-gray-900 mb-2">French</h3>
-                    <div class="text-sm text-gray-600 mb-3">Fluent</div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2" data-translate="language_french">French</h3>
+                    <div class="text-sm text-gray-600 mb-3" data-translate="proficiency_fluent">Fluent</div>
                     <div class="flex justify-center">
                         <div class="flex space-x-1">
                             <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
@@ -864,10 +645,10 @@
                 </div>
                 
                 <!-- German -->
-                <div class="language-badge bg-gradient-to-br from-teal-50 to-teal-100 rounded-2xl p-6 text-center fade-in">
+                <div class="language-badge bg-gradient-to-br from-teal-50 to-teal-100 rounded-2xl p-6 text-center fade-in text-black">
                     <div class="text-4xl mb-4">🇩🇪</div>
-                    <h3 class="text-lg font-bold text-gray-900 mb-2">German</h3>
-                    <div class="text-sm text-gray-600 mb-3">Fluent</div>
+                    <h3 class="text-lg font-bold mb-2" data-translate="language_german">German</h3>
+                    <div class="text-sm mb-3" data-translate="proficiency_fluent">Fluent</div>
                     <div class="flex justify-center">
                         <div class="flex space-x-1">
                             <div class="w-2 h-2 bg-teal-600 rounded-full"></div>
@@ -882,8 +663,8 @@
                 <!-- Russian -->
                 <div class="language-badge bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 text-center fade-in">
                     <div class="text-4xl mb-4">🇷🇺</div>
-                    <h3 class="text-lg font-bold text-gray-900 mb-2">Russian</h3>
-                    <div class="text-sm text-gray-600 mb-3">Advanced</div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2" data-translate="language_russian">Russian</h3>
+                    <div class="text-sm text-gray-600 mb-3" data-translate="proficiency_advanced">Advanced</div>
                     <div class="flex justify-center">
                         <div class="flex space-x-1">
                             <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
@@ -896,10 +677,10 @@
                 </div>
                 
                 <!-- Spanish -->
-                <div class="language-badge bg-gradient-to-br from-teal-50 to-teal-100 rounded-2xl p-6 text-center fade-in">
+                <div class="language-badge bg-gradient-to-br from-teal-50 to-teal-100 rounded-2xl p-6 text-center fade-in text-black">
                     <div class="text-4xl mb-4">🇪🇸</div>
-                    <h3 class="text-lg font-bold text-gray-900 mb-2">Spanish</h3>
-                    <div class="text-sm text-gray-600 mb-3">Advanced</div>
+                    <h3 class="text-lg font-bold mb-2" data-translate="language_spanish">Spanish</h3>
+                    <div class="text-sm mb-3" data-translate="proficiency_advanced">Advanced</div>
                     <div class="flex justify-center">
                         <div class="flex space-x-1">
                             <div class="w-2 h-2 bg-teal-600 rounded-full"></div>
@@ -914,8 +695,8 @@
                 <!-- Italian -->
                 <div class="language-badge bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 text-center fade-in">
                     <div class="text-4xl mb-4">🇮🇹</div>
-                    <h3 class="text-lg font-bold text-gray-900 mb-2">Italian</h3>
-                    <div class="text-sm text-gray-600 mb-3">Intermediate</div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2" data-translate="language_italian">Italian</h3>
+                    <div class="text-sm text-gray-600 mb-3" data-translate="proficiency_intermediate">Intermediate</div>
                     <div class="flex justify-center">
                         <div class="flex space-x-1">
                             <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
@@ -928,10 +709,10 @@
                 </div>
                 
                 <!-- Turkish -->
-                <div class="language-badge bg-gradient-to-br from-teal-50 to-teal-100 rounded-2xl p-6 text-center fade-in">
+                <div class="language-badge bg-gradient-to-br from-teal-50 to-teal-100 rounded-2xl p-6 text-center fade-in text-black">
                     <div class="text-4xl mb-4">🇹🇷</div>
-                    <h3 class="text-lg font-bold text-gray-900 mb-2">Turkish</h3>
-                    <div class="text-sm text-gray-600 mb-3">Intermediate</div>
+                    <h3 class="text-lg font-bold mb-2" data-translate="language_turkish">Turkish</h3>
+                    <div class="text-sm mb-3" data-translate="proficiency_intermediate">Intermediate</div>
                     <div class="flex justify-center">
                         <div class="flex space-x-1">
                             <div class="w-2 h-2 bg-teal-600 rounded-full"></div>
@@ -950,8 +731,8 @@
     <section id="contact" class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 fade-in">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">Get in Touch</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4" data-translate="contact_title">Get in Touch</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-translate="contact_subtitle">
                     Ready to start your language learning journey? Contact me to discuss your goals and create a customized learning plan.
                 </p>
             </div>
@@ -960,57 +741,57 @@
                 <!-- Contact Form -->
                 <div class="fade-in">
                     <div class="bg-white rounded-2xl p-8 shadow-lg">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Send a Message</h3>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6" data-translate="contact_form_title">Send a Message</h3>
                         
                         <!-- Contact Form with Formspree -->
                         <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-6">
                             <div>
-                                <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-2" data-translate="form_name_label">Full Name *</label>
                                 <input type="text" id="name" name="name" required class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
                             </div>
                             
                             <div>
-                                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-2" data-translate="form_email_label">Email Address *</label>
                                 <input type="email" id="email" name="email" required class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
                             </div>
                             
                             <div>
-                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone Number (Optional)</label>
+                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-2" data-translate="form_phone_label">Phone Number (Optional)</label>
                                 <input type="tel" id="phone" name="phone" class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
                             </div>
                             
                             <div>
-                                <label for="language" class="block text-sm font-medium text-gray-700 mb-2">Preferred Language for Communication</label>
+                                <label for="language" class="block text-sm font-medium text-gray-700 mb-2" data-translate="form_language_label">Preferred Language for Communication</label>
                                 <select id="language" name="preferred_language" class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                                    <option value="english">English</option>
-                                    <option value="arabic">Arabic</option>
-                                    <option value="french">French</option>
-                                    <option value="german">German</option>
-                                    <option value="russian">Russian</option>
-                                    <option value="spanish">Spanish</option>
+                                    <option value="english" data-translate="language_option_english">English</option>
+                                    <option value="arabic" data-translate="language_option_arabic">Arabic</option>
+                                    <option value="french" data-translate="language_option_french">French</option>
+                                    <option value="german" data-translate="language_option_german">German</option>
+                                    <option value="russian" data-translate="language_option_russian">Russian</option>
+                                    <option value="spanish" data-translate="language_option_spanish">Spanish</option>
                                 </select>
                             </div>
                             
                             <div>
-                                <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message *</label>
-                                <textarea id="message" name="message" rows="4" required class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Tell me about your language learning goals..."></textarea>
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-2" data-translate="form_message_label">Message *</label>
+                                <textarea id="message" name="message" rows="4" required class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" data-translate="form_message_placeholder" placeholder="Tell me about your language learning goals..."></textarea>
                             </div>
                             
                             <button type="submit" class="w-full btn-gradient text-white font-semibold py-4 rounded-lg transition-all">
                                 <i class="fas fa-paper-plane mr-2"></i>
-                                Send Message
+                                <span data-translate="form_submit_button">Send Message</span>
                             </button>
                         </form>
                         
                         <!-- Form status messages -->
                         <div id="form-success" class="hidden mt-4 p-4 bg-teal-100 border border-teal-400 text-teal-700 rounded-lg">
                             <i class="fas fa-check-circle mr-2"></i>
-                            Thank you for your message! I'll get back to you within 24 hours.
+                            <span data-translate="form_success_message">Thank you for your message! I'll get back to you within 24 hours.</span>
                         </div>
                         
                         <div id="form-error" class="hidden mt-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg">
                             <i class="fas fa-exclamation-circle mr-2"></i>
-                            Sorry, there was an error sending your message. Please try again or contact me directly.
+                            <span data-translate="form_error_message">Sorry, there was an error sending your message. Please try again or contact me directly.</span>
                         </div>
                     </div>
                 </div>
@@ -1020,45 +801,45 @@
                     <div class="space-y-8">
                         <!-- Contact Methods -->
                         <div class="bg-white rounded-2xl p-8 shadow-lg">
-                            <h3 class="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-6" data-translate="contact_info_title">Contact Information</h3>
                             <div class="space-y-6">
-                                <div class="flex items-center">
-                                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                                <div class="flex items-center" style="direction: ltr;">
+                                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
                                         <i class="fas fa-envelope text-blue-600"></i>
                                     </div>
                                     <div class="ml-4">
-                                        <h4 class="text-lg font-semibold text-gray-900">Email</h4>
+                                        <h4 class="text-lg font-semibold text-gray-900" data-translate="contact_email_title">Email</h4>
                                         <a href="mailto:dr.abdulrahman@example.com" class="text-blue-600 hover:text-blue-700">dr.abdulrahman@example.com</a>
                                     </div>
                                 </div>
                                 
-                                <div class="flex items-center">
-                                    <div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center">
+                                <div class="flex items-center" style="direction: ltr;">
+                                    <div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center flex-shrink-0">
                                         <i class="fab fa-whatsapp text-teal-600"></i>
                                     </div>
                                     <div class="ml-4">
-                                        <h4 class="text-lg font-semibold text-gray-900">WhatsApp</h4>
+                                        <h4 class="text-lg font-semibold text-gray-900" data-translate="contact_whatsapp_title">WhatsApp</h4>
                                         <a href="https://wa.me/1234567890" class="text-teal-600 hover:text-teal-700">+1 (234) 567-8900</a>
                                     </div>
                                 </div>
                                 
-                                <div class="flex items-center">
-                                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                                <div class="flex items-center" style="direction: ltr;">
+                                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
                                         <i class="fas fa-phone text-blue-600"></i>
                                     </div>
                                     <div class="ml-4">
-                                        <h4 class="text-lg font-semibold text-gray-900">Phone</h4>
+                                        <h4 class="text-lg font-semibold text-gray-900" data-translate="contact_phone_title">Phone</h4>
                                         <a href="tel:+1234567890" class="text-blue-600 hover:text-blue-700">+1 (234) 567-8900</a>
                                     </div>
                                 </div>
                                 
-                                <div class="flex items-center">
-                                    <div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center">
+                                <div class="flex items-center" style="direction: ltr;">
+                                    <div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center flex-shrink-0">
                                         <i class="fas fa-map-marker-alt text-teal-600"></i>
                                     </div>
                                     <div class="ml-4">
-                                        <h4 class="text-lg font-semibold text-gray-900">Location</h4>
-                                        <p class="text-gray-600">Online & In-Person Sessions Available</p>
+                                        <h4 class="text-lg font-semibold text-gray-900" data-translate="contact_location_title">Location</h4>
+                                        <p class="text-gray-600" data-translate="contact_location_desc">Online & In-Person Sessions Available</p>
                                     </div>
                                 </div>
                             </div>
@@ -1066,35 +847,35 @@
                         
                         <!-- Office Hours -->
                         <div class="bg-white rounded-2xl p-8 shadow-lg">
-                            <h3 class="text-2xl font-bold text-gray-900 mb-6">Office Hours</h3>
-                            <div class="space-y-3">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-6" data-translate="office_hours_title">Office Hours</h3>
+                            <div class="space-y-3" style="direction: ltr;">
                                 <div class="flex justify-between">
-                                    <span class="text-gray-600">Monday - Friday</span>
-                                    <span class="font-semibold text-gray-900">9:00 AM - 8:00 PM</span>
+                                    <span class="text-gray-600" data-translate="office_hours_weekdays">Monday - Friday</span>
+                                    <span class="font-semibold text-gray-900" data-translate="office_hours_weekdays_time">9:00 AM - 8:00 PM</span>
                                 </div>
                                 <div class="flex justify-between">
-                                    <span class="text-gray-600">Saturday</span>
-                                    <span class="font-semibold text-gray-900">10:00 AM - 6:00 PM</span>
+                                    <span class="text-gray-600" data-translate="office_hours_saturday">Saturday</span>
+                                    <span class="font-semibold text-gray-900" data-translate="office_hours_saturday_time">10:00 AM - 6:00 PM</span>
                                 </div>
                                 <div class="flex justify-between">
-                                    <span class="text-gray-600">Sunday</span>
-                                    <span class="font-semibold text-gray-900">By Appointment</span>
+                                    <span class="text-gray-600" data-translate="office_hours_sunday">Sunday</span>
+                                    <span class="font-semibold text-gray-900" data-translate="office_hours_sunday_time">By Appointment</span>
                                 </div>
                             </div>
-                            <p class="text-sm text-gray-500 mt-4">
+                            <p class="text-sm text-gray-500 mt-4" data-translate="office_hours_note">
                                 * All times are in local timezone. International students can schedule sessions according to their preferred time zones.
                             </p>
                         </div>
                         
                         <!-- Quick Response -->
                         <div class="bg-gradient-to-br from-blue-50 to-teal-50 rounded-2xl p-8">
-                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Quick Response Guarantee</h3>
-                            <p class="text-gray-600 mb-4">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4" data-translate="quick_response_title">Quick Response Guarantee</h3>
+                            <p class="text-gray-600 mb-4" data-translate="quick_response_desc">
                                 I typically respond to all inquiries within 24 hours. For urgent matters, please contact me via WhatsApp for immediate assistance.
                             </p>
-                            <div class="flex items-center text-sm text-teal-600">
+                            <div class="flex items-center text-sm text-teal-600" style="direction: ltr;">
                                 <i class="fas fa-clock mr-2"></i>
-                                Average response time: 6 hours
+                                <span data-translate="quick_response_time">Average response time: 6 hours</span>
                             </div>
                         </div>
                     </div>
@@ -1104,68 +885,68 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
+    <footer class="bg-gray-900 text-white py-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- About Footer -->
-                <div>
-                    <h3 class="text-xl font-bold mb-4">Dr. Abdulrahman</h3>
-                    <p class="text-gray-400 mb-4">
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold" data-translate="footer_about_title">Dr. Abdulrahman</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed" data-translate="footer_about_desc">
                         Professional multilingual educator dedicated to helping students achieve their language learning goals through personalized instruction and proven methodologies.
                     </p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <i class="fab fa-linkedin text-xl"></i>
+                    <div class="flex gap-4 pt-1" dir="ltr">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors text-lg" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <i class="fab fa-twitter text-xl"></i>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors text-lg" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
                         </a>
-                        <a href="https://wa.me/1234567890" class="text-gray-400 hover:text-white transition-colors">
-                            <i class="fab fa-whatsapp text-xl"></i>
+                        <a href="https://wa.me/1234567890" class="text-gray-400 hover:text-white transition-colors text-lg" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
                         </a>
-                        <a href="mailto:dr.abdulrahman@example.com" class="text-gray-400 hover:text-white transition-colors">
-                            <i class="fas fa-envelope text-xl"></i>
+                        <a href="mailto:dr.abdulrahman@example.com" class="text-gray-400 hover:text-white transition-colors text-lg" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
                         </a>
                     </div>
                 </div>
                 
                 <!-- Quick Links -->
-                <div>
-                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold" data-translate="footer_links_title">Quick Links</h3>
                     <ul class="space-y-2">
-                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About Me</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
-                        <li><a href="#languages" class="text-gray-400 hover:text-white transition-colors">Languages</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
-                        <li><a href="assets/abdulrahman-cv.pdf" download class="text-gray-400 hover:text-white transition-colors">Download CV</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors inline-block py-0.5" data-translate="footer_link_about">About Me</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors inline-block py-0.5" data-translate="footer_link_services">Services</a></li>
+                        <li><a href="#languages" class="text-gray-400 hover:text-white transition-colors inline-block py-0.5" data-translate="footer_link_languages">Languages</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors inline-block py-0.5" data-translate="footer_link_contact">Contact</a></li>
+                        <li><a href="assets/abdulrahman-cv.pdf" download class="text-gray-400 hover:text-white transition-colors inline-block py-0.5" data-translate="footer_link_cv">Download CV</a></li>
                     </ul>
                 </div>
                 
                 <!-- Contact Info -->
-                <div>
-                    <h3 class="text-xl font-bold mb-4">Contact</h3>
-                    <div class="space-y-2 text-gray-400">
-                        <div class="flex items-center">
-                            <i class="fas fa-envelope mr-2"></i>
-                            <span>dr.abdulrahman@example.com</span>
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold" data-translate="footer_contact_title">Contact</h3>
+                    <div class="space-y-3 text-gray-400">
+                        <div class="flex items-center" dir="ltr">
+                            <i class="fas fa-envelope mr-2.5 flex-shrink-0 text-base"></i>
+                            <span class="hover:text-white transition-colors text-sm" data-translate="footer_contact_email">dr.abdulrahman@example.com</span>
                         </div>
-                        <div class="flex items-center">
-                            <i class="fab fa-whatsapp mr-2"></i>
-                            <span>+1 (234) 567-8900</span>
+                        <div class="flex items-center" dir="ltr">
+                            <i class="fab fa-whatsapp mr-2.5 flex-shrink-0 text-base"></i>
+                            <span class="hover:text-white transition-colors text-sm" data-translate="footer_contact_whatsapp">+1 (234) 567-8900</span>
                         </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-globe mr-2"></i>
-                            <span>Online & In-Person Sessions</span>
+                        <div class="flex items-center" dir="ltr">
+                            <i class="fas fa-globe mr-2.5 flex-shrink-0 text-base"></i>
+                            <span class="hover:text-white transition-colors text-sm" data-translate="footer_contact_location">Online & In-Person Sessions</span>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
-                <p class="text-gray-400">
-                    &copy; 2024 Dr. Abdulrahman Language Tutor. All rights reserved.
+            <div class="border-t border-gray-800 mt-8 pt-6 text-center">
+                <p class="text-gray-400 text-base">
+                    <span id="current-year"></span> <span data-translate="footer_copyright" >Dr. Abdulrahman Language Tutor. All rights reserved.</span>
                 </p>
-                <p class="text-sm text-gray-500 mt-2">
+                <p class="text-sm text-gray-500 mt-2" data-translate="footer_tagline">
                     Professional language education services | IELTS Official Examiner | PhD Applied Linguistics
                 </p>
             </div>
@@ -1173,743 +954,10 @@
     </footer>
 
     <!-- JavaScript -->
+    <script src="/script/main.js"></script>
     <script>
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-        
-        // Close mobile menu when clicking on a link
-        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-        mobileMenuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-        
-        // Smooth scrolling for navigation links
-        const navLinks = document.querySelectorAll('a[href^="#"]');
-        navLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const targetId = link.getAttribute('href');
-                const targetSection = document.querySelector(targetId);
-                
-                if (targetSection) {
-                    const offsetTop = targetSection.offsetTop - 70; // Account for fixed header
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // Fade in animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-        
-        // Observe all fade-in elements
-        const fadeInElements = document.querySelectorAll('.fade-in');
-        fadeInElements.forEach(el => observer.observe(el));
-        
-        // Contact form handling
-        const contactForm = document.getElementById('contact-form');
-        const formSuccess = document.getElementById('form-success');
-        const formError = document.getElementById('form-error');
-        
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            // Hide previous messages
-            formSuccess.classList.add('hidden');
-            formError.classList.add('hidden');
-            
-            // Get form data
-            const formData = new FormData(contactForm);
-            
-            try {
-                // Note: Replace YOUR_FORM_ID with actual Formspree form ID
-                const response = await fetch(contactForm.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-                
-                if (response.ok) {
-                    formSuccess.classList.remove('hidden');
-                    contactForm.reset();
-                    
-                    // Scroll to success message
-                    formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                } else {
-                    throw new Error('Form submission failed');
-                }
-            } catch (error) {
-                console.error('Form submission error:', error);
-                formError.classList.remove('hidden');
-                
-                // Scroll to error message
-                formError.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }
-        });
-        
-        // Form validation
-        const formInputs = document.querySelectorAll('.form-input');
-        formInputs.forEach(input => {
-            input.addEventListener('blur', validateInput);
-            input.addEventListener('input', clearValidationError);
-        });
-        
-        function validateInput(e) {
-            const input = e.target;
-            const isRequired = input.hasAttribute('required');
-            const isEmpty = !input.value.trim();
-            
-            if (isRequired && isEmpty) {
-                showInputError(input, 'This field is required');
-            } else if (input.type === 'email' && input.value && !isValidEmail(input.value)) {
-                showInputError(input, 'Please enter a valid email address');
-            } else {
-                clearInputError(input);
-            }
-        }
-        
-        function clearValidationError(e) {
-            clearInputError(e.target);
-        }
-        
-        function showInputError(input, message) {
-            clearInputError(input);
-            
-            input.classList.add('border-red-500');
-            const errorDiv = document.createElement('div');
-            errorDiv.className = 'text-red-500 text-sm mt-1';
-            errorDiv.textContent = message;
-            errorDiv.setAttribute('data-error-for', input.id);
-            
-            input.parentNode.appendChild(errorDiv);
-        }
-        
-        function clearInputError(input) {
-            input.classList.remove('border-red-500');
-            const existingError = input.parentNode.querySelector(`[data-error-for="${input.id}"]`);
-            if (existingError) {
-                existingError.remove();
-            }
-        }
-        
-        function isValidEmail(email) {
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return emailRegex.test(email);
-        }
-        
-        // Header scroll effect
-        const header = document.querySelector('nav');
-        let lastScrollY = window.scrollY;
-        
-        window.addEventListener('scroll', () => {
-            const currentScrollY = window.scrollY;
-            
-            if (currentScrollY > 100) {
-                header.classList.add('shadow-lg');
-            } else {
-                header.classList.remove('shadow-lg');
-            }
-            
-            lastScrollY = currentScrollY;
-        });
-        
-        // Initialize animations on page load
-        window.addEventListener('load', () => {
-            // Trigger initial fade-in for elements in viewport
-            fadeInElements.forEach(el => {
-                const rect = el.getBoundingClientRect();
-                if (rect.top < window.innerHeight && rect.bottom > 0) {
-                    el.classList.add('visible');
-                }
-            });
-        });
-        
-        // Keyboard navigation accessibility
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
-                mobileMenu.classList.add('hidden');
-            }
-        });
-
-        // Translation System
-        const translations = {
-            en: {
-                nav_home: "Home",
-                nav_about: "About",
-                nav_services: "Services",
-                nav_languages: "Languages",
-                nav_contact: "Contact",
-                hero_title_1: "Master Languages with",
-                hero_title_2: "Expert Guidance",
-                hero_description: "Multilingual Education Specialist offering university-level language instruction in 7+ languages including Arabic, English, French, German, and Russian.",
-                btn_book_session: "Book a Session",
-                btn_view_services: "View Services",
-                stat_languages: "Languages",
-                stat_students: "Students",
-                stat_experience: "Years Experience",
-                about_title: "About Dr. Abdulrahman",
-                about_subtitle: "Dedicated to empowering students through comprehensive language education and cultural understanding",
-                about_philosophy_title: "Academic Excellence & Teaching Philosophy",
-                about_expertise_title: "University-Level Expertise",
-                about_expertise_desc: "PhD in Applied Linguistics with specialization in multilingual education and second language acquisition.",
-                about_approach_title: "Cognitive Learning Approach",
-                about_approach_desc: "Utilizing modern neurolinguistic methods to accelerate language acquisition and retention.",
-                about_instruction_title: "Personalized Instruction",
-                about_instruction_desc: "Tailored teaching methods adapted to individual learning styles and cultural backgrounds.",
-                about_credentials_title: "Credentials & Achievements",
-                credential_phd: "PhD in Applied Linguistics - University of Oxford",
-                credential_celta: "CELTA Certified English Language Teacher",
-                credential_ielts: "IELTS Official Examiner Certification",
-                credential_research: "Published Research in Language Acquisition",
-                credential_lecturer: "Guest Lecturer at International Universities",
-                btn_download_cv: "Download Complete CV",
-                services_title: "Language Learning Services",
-                services_subtitle: "Comprehensive language programs designed to meet your academic, professional, and personal goals",
-                service1_title: "Arabic for Non-Native Speakers",
-                service1_desc: "Master Modern Standard Arabic and regional dialects with culturally immersive teaching methods.",
-                service1_feature1: "Classical & Modern Arabic",
-                service1_feature2: "Cultural Context Integration",
-                service1_feature3: "Business Arabic Available",
-                service2_title: "IELTS/TOEFL Preparation",
-                service2_desc: "Comprehensive test preparation with proven strategies for achieving your target scores.",
-                service2_feature1: "Speaking & Writing Focus",
-                service2_feature2: "Mock Tests & Feedback",
-                service2_feature3: "Score Guarantee Program",
-                service3_title: "Business Language Skills",
-                service3_desc: "Professional language training for international business and career advancement.",
-                service3_feature1: "Industry-Specific Vocabulary",
-                service3_feature2: "Presentation Skills",
-                service3_feature3: "Cross-Cultural Communication",
-                price_from: "Starting from $40/hour",
-                languages_title: "Languages I Teach",
-                languages_subtitle: "Fluent instruction across multiple languages with cultural expertise",
-                contact_title: "Get In Touch",
-                contact_subtitle: "Ready to start your language learning journey? Let's discuss your goals and create a personalized learning plan.",
-                contact_name: "Full Name",
-                contact_email: "Email Address",
-                contact_phone: "Phone Number",
-                contact_language: "Preferred Language",
-                contact_message: "Your Message",
-                btn_send_message: "Send Message",
-                footer_links: "Quick Links",
-                footer_about: "About Me",
-                footer_services: "Services",
-                footer_languages: "Languages",
-                footer_contact: "Contact",
-                footer_download_cv: "Download CV",
-                footer_contact_info: "Contact",
-                footer_rights: "All rights reserved.",
-                testimonials_title: "Student Testimonials",
-                testimonials_subtitle: "Hear from students who have achieved their language learning goals with expert guidance"
-            },
-            ar: {
-                nav_home: "الرئيسية",
-                nav_about: "حول",
-                nav_services: "الخدمات",
-                nav_languages: "اللغات",
-                nav_contact: "اتصل بنا",
-                hero_title_1: "أتقن اللغات مع",
-                hero_title_2: "إرشاد الخبراء",
-                hero_description: "أخصائي تعليم متعدد اللغات يقدم تعليم اللغات على مستوى جامعي في أكثر من 7 لغات بما في ذلك العربية والإنجليزية والفرنسية والألمانية والروسية.",
-                btn_book_session: "احجز جلسة",
-                btn_view_services: "عرض الخدمات",
-                stat_languages: "لغات",
-                stat_students: "طلاب",
-                stat_experience: "سنوات خبرة",
-                about_title: "حول الدكتور عبدالرحمن",
-                about_subtitle: "مكرس لتمكين الطلاب من خلال التعليم الشامل للغات والفهم الثقافي",
-                about_philosophy_title: "التميز الأكاديمي وفلسفة التدريس",
-                about_expertise_title: "خبرة على مستوى جامعي",
-                about_expertise_desc: "دكتوراه في اللسانيات التطبيقية مع تخصص في التعليم متعدد اللغات واكتساب اللغة الثانية.",
-                about_approach_title: "نهج التعلم المعرفي",
-                about_approach_desc: "استخدام الطرق العصبية اللغوية الحديثة لتسريع اكتساب اللغة والاحتفاظ بها.",
-                about_instruction_title: "التعليم الشخصي",
-                about_instruction_desc: "طرق تدريس مصممة خصيصاً تتكيف مع أساليب التعلم الفردية والخلفيات الثقافية.",
-                about_credentials_title: "المؤهلات والإنجازات",
-                credential_phd: "دكتوراه في اللسانيات التطبيقية - جامعة أكسفورد",
-                credential_celta: "معلم لغة إنجليزية معتمد CELTA",
-                credential_ielts: "شهادة ممتحن IELTS الرسمي",
-                credential_research: "أبحاث منشورة في اكتساب اللغة",
-                credential_lecturer: "محاضر ضيف في الجامعات الدولية",
-                btn_download_cv: "تحميل السيرة الذاتية الكاملة",
-                services_title: "خدمات تعلم اللغات",
-                services_subtitle: "برامج لغوية شاملة مصممة لتلبية أهدافك الأكاديمية والمهنية والشخصية",
-                service1_title: "العربية لغير الناطقين بها",
-                service1_desc: "أتقن العربية الفصحى الحديثة واللهجات الإقليمية بطرق تدريس غامرة ثقافياً.",
-                service1_feature1: "العربية الكلاسيكية والحديثة",
-                service1_feature2: "التكامل السياق الثقافي",
-                service1_feature3: "العربية التجارية متاحة",
-                service2_title: "إعداد IELTS/TOEFL",
-                service2_desc: "إعداد شامل للاختبار مع استراتيجيات مثبتة لتحقيق درجاتك المستهدفة.",
-                service2_feature1: "التركيز على التحدث والكتابة",
-                service2_feature2: "اختبارات تجريبية وملاحظات",
-                service2_feature3: "برنامج ضمان الدرجات",
-                service3_title: "مهارات اللغة التجارية",
-                service3_desc: "تدريب لغوي مهني للأعمال الدولية والتقدم المهني.",
-                service3_feature1: "مفردات خاصة بالصناعة",
-                service3_feature2: "مهارات العرض",
-                service3_feature3: "التواصل عبر الثقافات",
-                price_from: "بدءاً من 40 دولار/ساعة",
-                languages_title: "اللغات التي أُدرّسها",
-                languages_subtitle: "تعليم طلق عبر لغات متعددة مع خبرة ثقافية",
-                contact_title: "تواصل معنا",
-                contact_subtitle: "مستعد لبدء رحلة تعلم اللغة؟ دعنا نناقش أهدافك ونضع خطة تعلم شخصية.",
-                contact_name: "الاسم الكامل",
-                contact_email: "عنوان البريد الإلكتروني",
-                contact_phone: "رقم الهاتف",
-                contact_language: "اللغة المفضلة",
-                contact_message: "رسالتك",
-                btn_send_message: "إرسال الرسالة",
-                footer_links: "روابط سريعة",
-                footer_about: "حولي",
-                footer_services: "الخدمات",
-                footer_languages: "اللغات",
-                footer_contact: "اتصل بنا",
-                footer_download_cv: "تحميل السيرة الذاتية",
-                footer_contact_info: "اتصل بنا",
-                footer_rights: "جميع الحقوق محفوظة.",
-                testimonials_title: "شهادات الطلاب",
-                testimonials_subtitle: "استمع إلى الطلاب الذين حققوا أهدافهم في تعلم اللغة بإرشاد الخبراء"
-            },
-            zh: {
-                nav_home: "首页",
-                nav_about: "关于",
-                nav_services: "服务",
-                nav_languages: "语言",
-                nav_contact: "联系",
-                hero_title_1: "跟随专家指导",
-                hero_title_2: "掌握语言",
-                hero_description: "多语言教育专家，提供大学水平的语言教学，涵盖阿拉伯语、英语、法语、德语、俄语等7+种语言。",
-                btn_book_session: "预约课程",
-                btn_view_services: "查看服务",
-                stat_languages: "种语言",
-                stat_students: "名学生",
-                stat_experience: "年经验",
-                about_title: "关于阿卜杜勒拉赫曼博士",
-                about_subtitle: "致力于通过全面的语言教育和文化理解赋能学生",
-                about_philosophy_title: "学术卓越与教学理念",
-                about_expertise_title: "大学级专业知识",
-                about_expertise_desc: "应用语言学博士，专攻多语言教育和第二语言习得。",
-                about_approach_title: "认知学习方法",
-                about_approach_desc: "运用现代神经语言学方法加速语言习得和记忆。",
-                about_instruction_title: "个性化教学",
-                about_instruction_desc: "量身定制的教学方法，适应个人学习风格和文化背景。",
-                about_credentials_title: "资历与成就",
-                credential_phd: "应用语言学博士 - 牛津大学",
-                credential_celta: "CELTA认证英语教师",
-                credential_ielts: "IELTS官方考官认证",
-                credential_research: "语言习得研究发表",
-                credential_lecturer: "国际大学客座讲师",
-                btn_download_cv: "下载完整简历",
-                services_title: "语言学习服务",
-                services_subtitle: "全面的语言课程，旨在满足您的学术、专业和个人目标",
-                service1_title: "面向非母语者的阿拉伯语",
-                service1_desc: "通过文化沉浸式教学方法掌握现代标准阿拉伯语和地方方言。",
-                service1_feature1: "古典与现代阿拉伯语",
-                service1_feature2: "文化背景整合",
-                service1_feature3: "提供商务阿拉伯语",
-                service2_title: "IELTS/TOEFL备考",
-                service2_desc: "全面的考试准备，采用经过验证的策略帮您达到目标分数。",
-                service2_feature1: "口语写作重点",
-                service2_feature2: "模拟考试与反馈",
-                service2_feature3: "分数保证计划",
-                service3_title: "商务语言技能",
-                service3_desc: "为国际商务和职业发展提供专业语言培训。",
-                service3_feature1: "行业专用词汇",
-                service3_feature2: "演讲技巧",
-                service3_feature3: "跨文化交流",
-                price_from: "40美元/小时起",
-                languages_title: "我教授的语言",
-                languages_subtitle: "在多种语言中提供流利教学，具备文化专业知识",
-                contact_title: "联系我们",
-                contact_subtitle: "准备开始您的语言学习之旅了吗？让我们讨论您的目标并制定个性化学习计划。",
-                contact_name: "姓名",
-                contact_email: "电子邮箱",
-                contact_phone: "电话号码",
-                contact_language: "首选语言",
-                contact_message: "您的留言",
-                btn_send_message: "发送消息",
-                footer_links: "快速链接",
-                footer_about: "关于我",
-                footer_services: "服务",
-                footer_languages: "语言",
-                footer_contact: "联系",
-                footer_download_cv: "下载简历",
-                footer_contact_info: "联系方式",
-                footer_rights: "版权所有。"
-            },
-            tr: {
-                nav_home: "Ana Sayfa",
-                nav_about: "Hakkında",
-                nav_services: "Hizmetler",
-                nav_languages: "Diller",
-                nav_contact: "İletişim",
-                hero_title_1: "Uzman Rehberliğiyle",
-                hero_title_2: "Dillerde Ustalaş",
-                hero_description: "Arapça, İngilizce, Fransızca, Almanca ve Rusça dahil 7+ dilde üniversite düzeyinde dil eğitimi sunan çok dilli eğitim uzmanı.",
-                btn_book_session: "Ders Rezervasyonu",
-                btn_view_services: "Hizmetleri Görüntüle",
-                stat_languages: "Dil",
-                stat_students: "Öğrenci",
-                stat_experience: "Yıl Deneyim",
-                about_title: "Dr. Abdulrahman Hakkında",
-                about_subtitle: "Kapsamlı dil eğitimi ve kültürel anlayış yoluyla öğrencileri güçlendirmeye adanmış",
-                about_philosophy_title: "Akademik Mükemmellik ve Öğretim Felsefesi",
-                about_expertise_title: "Üniversite Düzeyinde Uzmanlık",
-                about_expertise_desc: "Çok dilli eğitim ve ikinci dil edinimi uzmanı Uygulamalı Dilbilim Doktorası.",
-                about_approach_title: "Bilişsel Öğrenme Yaklaşımı",
-                about_approach_desc: "Dil edinimi ve hafızayı hızlandırmak için modern nörolinguistik yöntemler kullanma.",
-                about_instruction_title: "Kişiselleştirilmiş Öğretim",
-                about_instruction_desc: "Bireysel öğrenme stillerine ve kültürel geçmişlere uyarlanmış özel öğretim yöntemleri.",
-                about_credentials_title: "Kimlik Bilgileri ve Başarılar",
-                credential_phd: "Uygulamalı Dilbilim Doktorası - Oxford Üniversitesi",
-                credential_celta: "CELTA Sertifikalı İngilizce Öğretmeni",
-                credential_ielts: "IELTS Resmi Sınav Görevlisi Sertifikası",
-                credential_research: "Dil Edinimi Konusunda Yayınlanmış Araştırma",
-                credential_lecturer: "Uluslararası Üniversitelerde Misafir Öğretim Görevlisi",
-                btn_download_cv: "Tam CV'yi İndir",
-                services_title: "Dil Öğrenme Hizmetleri",
-                services_subtitle: "Akademik, profesyonel ve kişisel hedeflerinizi karşılamak için tasarlanmış kapsamlı dil programları",
-                service1_title: "Ana Dili Olmayan Konuşmacılar için Arapça",
-                service1_desc: "Kültürel olarak sürükleyici öğretim yöntemleriyle Modern Standart Arapça ve bölgesel lehçelerde ustalaşın.",
-                service1_feature1: "Klasik ve Modern Arapça",
-                service1_feature2: "Kültürel Bağlam Entegrasyonu",
-                service1_feature3: "İş Arapçası Mevcut",
-                service2_title: "IELTS/TOEFL Hazırlığı",
-                service2_desc: "Hedef puanlarınızı elde etmek için kanıtlanmış stratejilerle kapsamlı sınav hazırlığı.",
-                service2_feature1: "Konuşma ve Yazma Odağı",
-                service2_feature2: "Deneme Sınavları ve Geri Bildirim",
-                service2_feature3: "Puan Garanti Programı",
-                service3_title: "İş Dil Becerileri",
-                service3_desc: "Uluslararası iş ve kariyer gelişimi için profesyonel dil eğitimi.",
-                service3_feature1: "Sektöre Özel Kelime Dağarcığı",
-                service3_feature2: "Sunum Becerileri",
-                service3_feature3: "Kültürler Arası İletişim",
-                price_from: "Saatte 40$'dan başlayan fiyatlarla",
-                languages_title: "Öğrettiğim Diller",
-                languages_subtitle: "Kültürel uzmanlık ile birden fazla dilde akıcı eğitim",
-                contact_title: "İletişime Geçin",
-                contact_subtitle: "Dil öğrenme yolculuğunuza başlamaya hazır mısınız? Hedeflerinizi tartışalım ve kişiselleştirilmiş bir öğrenme planı oluşturalım.",
-                contact_name: "Ad Soyad",
-                contact_email: "E-posta Adresi",
-                contact_phone: "Telefon Numarası",
-                contact_language: "Tercih Edilen Dil",
-                contact_message: "Mesajınız",
-                btn_send_message: "Mesaj Gönder",
-                footer_links: "Hızlı Bağlantılar",
-                footer_about: "Hakkımda",
-                footer_services: "Hizmetler",
-                footer_languages: "Diller",
-                footer_contact: "İletişim",
-                footer_download_cv: "CV İndir",
-                footer_contact_info: "İletişim",
-                footer_rights: "Tüm hakları saklıdır."
-            },
-            fa: {
-                nav_home: "خانه",
-                nav_about: "درباره",
-                nav_services: "خدمات",
-                nav_languages: "زبان‌ها",
-                nav_contact: "تماس",
-                hero_title_1: "با راهنمایی متخصص",
-                hero_title_2: "زبان‌ها را بیاموزید",
-                hero_description: "متخصص آموزش چندزبانه که آموزش زبان در سطح دانشگاهی را در بیش از 7 زبان از جمله عربی، انگلیسی، فرانسوی، آلمانی و روسی ارائه می‌دهد.",
-                btn_book_session: "رزرو جلسه",
-                btn_view_services: "مشاهده خدمات",
-                stat_languages: "زبان",
-                stat_students: "دانشجو",
-                stat_experience: "سال تجربه",
-                about_title: "درباره دکتر عبدالرحمن",
-                about_subtitle: "متعهد به توانمندسازی دانش‌آموزان از طریق آموزش جامع زبان و درک فرهنگی",
-                about_philosophy_title: "تعالی آکادمیک و فلسفه تدریس",
-                about_expertise_title: "تخصص سطح دانشگاهی",
-                about_expertise_desc: "دکتری در زبان‌شناسی کاربردی با تخصص در آموزش چندزبانه و فراگیری زبان دوم.",
-                about_approach_title: "رویکرد یادگیری شناختی",
-                about_approach_desc: "استفاده از روش‌های نوین عصب‌زبان‌شناسی برای تسریع فراگیری و حفظ زبان.",
-                about_instruction_title: "آموزش شخصی‌سازی شده",
-                about_instruction_desc: "روش‌های تدریس سفارشی متناسب با سبک‌های یادگیری فردی و پیش‌زمینه‌های فرهنگی.",
-                about_credentials_title: "اعتبارات و دستاوردها",
-                credential_phd: "دکتری زبان‌شناسی کاربردی - دانشگاه آکسفورد",
-                credential_celta: "معلم زبان انگلیسی گواهی‌نامه CELTA",
-                credential_ielts: "گواهی‌نامه ممتحن رسمی IELTS",
-                credential_research: "تحقیقات منتشر شده در فراگیری زبان",
-                credential_lecturer: "مدرس مهمان در دانشگاه‌های بین‌المللی",
-                btn_download_cv: "دانلود رزومه کامل",
-                services_title: "خدمات یادگیری زبان",
-                services_subtitle: "برنامه‌های جامع زبان طراحی شده برای رسیدن به اهداف آکادمیک، حرفه‌ای و شخصی شما",
-                service1_title: "عربی برای غیر بومی‌ها",
-                service1_desc: "تسلط بر عربی معیار مدرن و گویش‌های منطقه‌ای با روش‌های تدریس غوطه‌ور فرهنگی.",
-                service1_feature1: "عربی کلاسیک و مدرن",
-                service1_feature2: "ادغام بافت فرهنگی",
-                service1_feature3: "عربی تجاری موجود",
-                service2_title: "آماده‌سازی IELTS/TOEFL",
-                service2_desc: "آماده‌سازی جامع آزمون با استراتژی‌های اثبات شده برای دستیابی به نمرات هدف.",
-                service2_feature1: "تمرکز بر گفتار و نوشتار",
-                service2_feature2: "آزمون‌های تمرینی و بازخورد",
-                service2_feature3: "برنامه تضمین نمره",
-                service3_title: "مهارت‌های زبان تجاری",
-                service3_desc: "آموزش زبان حرفه‌ای برای تجارت بین‌المللی و پیشرفت شغلی.",
-                service3_feature1: "واژگان تخصصی صنعت",
-                service3_feature2: "مهارت‌های ارائه",
-                service3_feature3: "ارتباطات میان فرهنگی",
-                price_from: "از ۴۰ دلار در ساعت",
-                languages_title: "زبان‌هایی که تدریس می‌کنم",
-                languages_subtitle: "آموزش روان در زبان‌های متعدد با تخصص فرهنگی",
-                contact_title: "تماس بگیرید",
-                contact_subtitle: "آماده شروع سفر یادگیری زبان هستید؟ بیایید اهدافتان را بحث کنیم و برنامه یادگیری شخصی‌سازی شده ایجاد کنیم.",
-                contact_name: "نام کامل",
-                contact_email: "آدرس ایمیل",
-                contact_phone: "شماره تلفن",
-                contact_language: "زبان ترجیحی",
-                contact_message: "پیام شما",
-                btn_send_message: "ارسال پیام",
-                footer_links: "پیوندهای سریع",
-                footer_about: "درباره من",
-                footer_services: "خدمات",
-                footer_languages: "زبان‌ها",
-                footer_contact: "تماس",
-                footer_download_cv: "دانلود رزومه",
-                footer_contact_info: "تماس",
-                footer_rights: "تمام حقوق محفوظ است."
-            },
-            ru: {
-                nav_home: "Главная",
-                nav_about: "О нас",
-                nav_services: "Услуги",
-                nav_languages: "Языки",
-                nav_contact: "Контакты",
-                hero_title_1: "Изучайте языки с",
-                hero_title_2: "Экспертным руководством",
-                hero_description: "Специалист по многоязычному образованию, предлагающий языковое обучение университетского уровня на 7+ языках, включая арабский, английский, французский, немецкий и русский.",
-                btn_book_session: "Записаться на урок",
-                btn_view_services: "Посмотреть услуги",
-                stat_languages: "Языков",
-                stat_students: "Студентов",
-                stat_experience: "Лет опыта",
-                about_title: "О докторе Абдулрахмане",
-                about_subtitle: "Посвящен расширению возможностей студентов через комплексное языковое образование и культурное понимание",
-                about_philosophy_title: "Академическое превосходство и философия преподавания",
-                about_expertise_title: "Экспертиза университетского уровня",
-                about_expertise_desc: "Доктор прикладной лингвистики со специализацией в многоязычном образовании и изучении второго языка.",
-                about_approach_title: "Когнитивный подход к обучению",
-                about_approach_desc: "Использование современных нейролингвистических методов для ускорения изучения и запоминания языка.",
-                about_instruction_title: "Персонализированное обучение",
-                about_instruction_desc: "Индивидуальные методы обучения, адаптированные к личным стилям обучения и культурным особенностям.",
-                about_credentials_title: "Квалификация и достижения",
-                credential_phd: "Доктор прикладной лингвистики - Оксфордский университет",
-                credential_celta: "Сертифицированный преподаватель английского языка CELTA",
-                credential_ielts: "Сертификация официального экзаменатора IELTS",
-                credential_research: "Опубликованные исследования в области изучения языков",
-                credential_lecturer: "Приглашенный лектор в международных университетах",
-                btn_download_cv: "Скачать полное резюме",
-                services_title: "Услуги изучения языков",
-                services_subtitle: "Комплексные языковые программы, разработанные для достижения ваших академических, профессиональных и личных целей",
-                service1_title: "Арабский для неносителей языка",
-                service1_desc: "Овладейте современным стандартным арабским и региональными диалектами с помощью культурно-погружающих методов обучения.",
-                service1_feature1: "Классический и современный арабский",
-                service1_feature2: "Интеграция культурного контекста",
-                service1_feature3: "Доступен деловой арабский",
-                service2_title: "Подготовка к IELTS/TOEFL",
-                service2_desc: "Комплексная подготовка к экзаменам с проверенными стратегиями для достижения целевых баллов.",
-                service2_feature1: "Фокус на говорении и письме",
-                service2_feature2: "Пробные тесты и обратная связь",
-                service2_feature3: "Программа гарантии баллов",
-                service3_title: "Навыки делового языка",
-                service3_desc: "Профессиональное языковое обучение для международного бизнеса и карьерного роста.",
-                service3_feature1: "Отраслевая лексика",
-                service3_feature2: "Навыки презентации",
-                service3_feature3: "Межкультурное общение",
-                price_from: "От $40/час",
-                languages_title: "Языки, которые я преподаю",
-                languages_subtitle: "Свободное обучение на нескольких языках с культурной экспертизой",
-                contact_title: "Свяжитесь с нами",
-                contact_subtitle: "Готовы начать свое путешествие в изучении языка? Давайте обсудим ваши цели и создадим персонализированный план обучения.",
-                contact_name: "Полное имя",
-                contact_email: "Адрес электронной почты",
-                contact_phone: "Номер телефона",
-                contact_language: "Предпочитаемый язык",
-                contact_message: "Ваше сообщение",
-                btn_send_message: "Отправить сообщение",
-                footer_links: "Быстрые ссылки",
-                footer_about: "Обо мне",
-                footer_services: "Услуги",
-                footer_languages: "Языки",
-                footer_contact: "Контакты",
-                footer_download_cv: "Скачать резюме",
-                footer_contact_info: "Контакты",
-                footer_rights: "Все права защищены."
-            }
-        };
-
-        const languageConfig = {
-            en: { flag: "🇺🇸", name: "English", dir: "ltr", class: "" },
-            ar: { flag: "🇸🇦", name: "العربية", dir: "rtl", class: "lang-ar" },
-            zh: { flag: "🇨🇳", name: "中文", dir: "ltr", class: "lang-zh" },
-            tr: { flag: "🇹🇷", name: "Türkçe", dir: "ltr", class: "" },
-            fa: { flag: "🇮🇷", name: "فارسی", dir: "rtl", class: "lang-fa" },
-            ru: { flag: "🇷🇺", name: "Русский", dir: "ltr", class: "" }
-        };
-
-        let currentLanguage = localStorage.getItem('language') || 'en';
-
-        // Language switching functionality
-        function switchLanguage(lang) {
-            currentLanguage = lang;
-            localStorage.setItem('language', lang);
-            
-            // Update text content
-            document.querySelectorAll('[data-translate]').forEach(element => {
-                const key = element.getAttribute('data-translate');
-                if (translations[lang] && translations[lang][key]) {
-                    element.textContent = translations[lang][key];
-                }
-            });
-            
-            // Update document direction and class
-            const config = languageConfig[lang];
-            document.documentElement.dir = config.dir;
-            document.body.className = document.body.className.replace(/lang-\w+/g, '');
-            if (config.class) {
-                document.body.classList.add(config.class);
-            }
-            
-            // Update language selector displays
-            updateLanguageDisplay();
-        }
-
-        function updateLanguageDisplay() {
-            const config = languageConfig[currentLanguage];
-            
-            // Desktop
-            document.getElementById('current-flag').textContent = config.flag;
-            document.getElementById('current-lang').textContent = currentLanguage.toUpperCase();
-            
-            // Mobile
-            document.getElementById('mobile-current-flag').textContent = config.flag;
-            document.getElementById('mobile-current-lang').textContent = config.name;
-        }
-
-        // Language dropdown functionality
-        const languageBtn = document.getElementById('language-btn');
-        const languageDropdown = document.getElementById('language-dropdown');
-        const mobileLanguageBtn = document.getElementById('mobile-language-btn');
-        const mobileLanguageDropdown = document.getElementById('mobile-language-dropdown');
-
-        // Desktop language dropdown
-        languageBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            languageDropdown.classList.toggle('hidden');
-        });
-
-        // Mobile language dropdown
-        mobileLanguageBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            mobileLanguageDropdown.classList.toggle('hidden');
-        });
-
-        // Language option selection
-        document.querySelectorAll('.language-option, .mobile-language-option').forEach(option => {
-            option.addEventListener('click', () => {
-                const lang = option.getAttribute('data-lang');
-                switchLanguage(lang);
-                languageDropdown.classList.add('hidden');
-                mobileLanguageDropdown.classList.add('hidden');
-            });
-        });
-
-        // Close dropdowns when clicking outside
-        document.addEventListener('click', () => {
-            languageDropdown.classList.add('hidden');
-            mobileLanguageDropdown.classList.add('hidden');
-        });
-
-        // Initialize language on page load
-        document.addEventListener('DOMContentLoaded', () => {
-            switchLanguage(currentLanguage);
-        });
-
-        // Dark Mode functionality
-        const darkModeToggle = document.getElementById('dark-mode-toggle');
-        const darkModeIcon = document.getElementById('dark-mode-icon');
-        let isDarkMode = localStorage.getItem('darkMode') === 'true';
-
-        function toggleDarkMode() {
-            isDarkMode = !isDarkMode;
-            localStorage.setItem('darkMode', isDarkMode);
-            updateDarkMode();
-        }
-
-        function updateDarkMode() {
-            if (isDarkMode) {
-                document.documentElement.classList.add('dark');
-                darkModeIcon.className = 'fas fa-sun text-gray-700 dark:text-gray-300';
-            } else {
-                document.documentElement.classList.remove('dark');
-                darkModeIcon.className = 'fas fa-moon text-gray-700 dark:text-gray-300';
-            }
-        }
-
-        darkModeToggle.addEventListener('click', toggleDarkMode);
-
-        // Initialize dark mode on page load
-        document.addEventListener('DOMContentLoaded', () => {
-            updateDarkMode();
-        });
-
-        // Testimonials Carousel functionality
-        const testimonialsContainer = document.getElementById('testimonials-container');
-        const prevBtn = document.getElementById('prev-testimonial');
-        const nextBtn = document.getElementById('next-testimonial');
-        let currentTestimonial = 0;
-
-        function scrollToTestimonial(index) {
-            const cardWidth = 320; // 80 * 4 (w-80 = 20rem = 320px)
-            const scrollAmount = index * (cardWidth + 24); // 24px for gap
-            testimonialsContainer.scrollTo({
-                left: scrollAmount,
-                behavior: 'smooth'
-            });
-        }
-
-        prevBtn.addEventListener('click', () => {
-            currentTestimonial = Math.max(0, currentTestimonial - 1);
-            scrollToTestimonial(currentTestimonial);
-        });
-
-        nextBtn.addEventListener('click', () => {
-            const maxTestimonials = testimonialsContainer.children.length - 1;
-            currentTestimonial = Math.min(maxTestimonials, currentTestimonial + 1);
-            scrollToTestimonial(currentTestimonial);
-        });
-
-        // Auto-scroll testimonials every 5 seconds
-        setInterval(() => {
-            const maxTestimonials = testimonialsContainer.children.length - 1;
-            currentTestimonial = currentTestimonial >= maxTestimonials ? 0 : currentTestimonial + 1;
-            scrollToTestimonial(currentTestimonial);
-        }, 5000);
+        // Simple script to update the year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
