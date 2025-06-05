@@ -28,7 +28,7 @@
             line-height: 1.8 !important;
         }
         
-        .lang-ar h1, .lang-ar h2, .lang-ar h3, .lang-ar h4, .lang-ar h5, .lang-ar h6 {
+        .lang-ar h2, .lang-ar h3, .lang-ar h4, .lang-ar h5, .lang-ar h6 {
             font-weight: 700 !important;
         }
     </style>
@@ -60,40 +60,45 @@
                     <!-- Language Switcher -->
                     <div class="relative">
                         <button id="language-btn" class="flex items-center space-x-2 px-3 py-2 bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 rounded-lg transition-colors">
-                            <span id="current-flag" class="text-lg">🇺🇸</span>
+                            <span id="current-flag" class="text-lg dark:text-gray-300">🇺🇸</span>
                             <span id="current-lang" class="text-sm font-medium text-gray-700 dark:text-gray-300" data-translate="current_language">EN</span>
                             <i class="fas fa-chevron-down text-xs text-gray-500 dark:text-gray-400"></i>
                         </button>
                         
                         <div id="language-dropdown" class="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 py-2 hidden z-50 transform transition-all duration-200 ease-in-out opacity-0 scale-95">
                             <button class="language-option w-full px-4 py-2 text-left hover:bg-gray-50 dark:hover:bg-gray-700 flex items-center space-x-3 transition-colors" data-lang="en">
-                                <span class="text-lg">🇺🇸</span>
-                                <span class="font-medium text-gray-900 dark:text-gray-100">English</span>
+                                <span class="text-lg dark:text-gray-300">🇺🇸</span>
+                                <span class="font-medium text-grey-900 dark:text-gray-100">English</span>
                             </button>
                             <button class="language-option w-full px-4 py-2 text-left hover:bg-gray-50 dark:hover:bg-gray-700 flex items-center space-x-3 transition-colors" data-lang="ar">
-                                <span class="text-lg">🇸🇦</span>
+                                <span class="text-lg dark:text-gray-300">🇸🇦</span>
                                 <span class="font-medium text-gray-900 dark:text-gray-100">العربية</span>
                             </button>
                             <button class="language-option w-full px-4 py-2 text-left hover:bg-gray-50 dark:hover:bg-gray-700 flex items-center space-x-3 transition-colors" data-lang="zh">
-                                <span class="text-lg">🇨🇳</span>
+                                <span class="text-lg dark:text-gray-300">🇨🇳</span>
                                 <span class="font-medium text-gray-900 dark:text-gray-100">中文</span>
                             </button>
                             <button class="language-option w-full px-4 py-2 text-left hover:bg-gray-50 dark:hover:bg-gray-700 flex items-center space-x-3 transition-colors" data-lang="tr">
-                                <span class="text-lg">🇹🇷</span>
+                                <span class="text-lg dark:text-gray-300">🇹🇷</span>
                                 <span class="font-medium text-gray-900 dark:text-gray-100">Türkçe</span>
                             </button>
                             <button class="language-option w-full px-4 py-2 text-left hover:bg-gray-50 dark:hover:bg-gray-700 flex items-center space-x-3 transition-colors" data-lang="fa">
-                                <span class="text-lg">🇮🇷</span>
+                                <span class="text-lg dark:text-gray-300">🇮🇷</span>
                                 <span class="font-medium text-gray-900 dark:text-gray-100">فارسی</span>
                             </button>
                             <button class="language-option w-full px-4 py-2 text-left hover:bg-gray-50 dark:hover:bg-gray-700 flex items-center space-x-3 transition-colors" data-lang="ru">
-                                <span class="text-lg">🇷🇺</span>
+                                <span class="text-lg dark:text-gray-300">🇷🇺</span>
                                 <span class="font-medium text-gray-900 dark:text-gray-100">Русский</span>
                             </button>
                         </div>
                     </div>
                 </div>
                 
+                <!-- Dark Mode Toggle -->
+                <button id="dark-mode-toggle" class="md:hidden p-2 rounded-lg bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition-colors">
+                    <i class="fas fa-moon text-gray-700 dark:text-gray-300" id="dark-mode-icon"></i>
+                </button>
+
                 <!-- Mobile menu button -->
                 <div class="md:hidden">
                     <button id="mobile-menu-btn" class="text-gray-700 hover:text-blue-600 focus:outline-none">
@@ -102,6 +107,7 @@
                 </div>
             </div>
         </div>
+        
         
         <!-- Mobile Navigation Menu -->
         <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200">
@@ -116,7 +122,7 @@
                 <div class="px-3 py-2">
                     <button id="mobile-language-btn" class="w-full flex items-center justify-between px-3 py-2 bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 rounded-lg transition-colors">
                         <div class="flex items-center space-x-2">
-                            <span id="mobile-current-flag" class="text-lg">🇺🇸</span>
+                            <span id="mobile-current-flag" class="text-lg dark:text-gray-300">🇺🇸</span>
                             <span id="mobile-current-lang" class="text-sm font-medium text-gray-700 dark:text-gray-300" data-translate="mobile_current_language">English</span>
                         </div>
                         <i class="fas fa-chevron-down text-xs text-gray-500 dark:text-gray-400 transition-transform duration-200"></i>
@@ -125,27 +131,27 @@
                     <div id="mobile-language-dropdown" class="mt-2 hidden transform transition-all duration-200 ease-in-out origin-top opacity-0 scale-95">
                         <button class="mobile-language-option w-full px-3 py-2 text-left hover:bg-gray-50 dark:hover:bg-gray-700 flex items-center space-x-3 rounded transition-colors" data-lang="en">
                             <span class="text-lg">🇺🇸</span>
-                            <span class="font-medium text-gray-900 dark:text-gray-100">English</span>
+                            <span class="font-medium">English</span>
                         </button>
                         <button class="mobile-language-option w-full px-3 py-2 text-left hover:bg-gray-50 dark:hover:bg-gray-700 flex items-center space-x-3 rounded transition-colors" data-lang="ar">
                             <span class="text-lg">🇸🇦</span>
-                            <span class="font-medium text-gray-900 dark:text-gray-100">العربية</span>
+                            <span class="font-medium">العربية</span>
                         </button>
                         <button class="mobile-language-option w-full px-3 py-2 text-left hover:bg-gray-50 dark:hover:bg-gray-700 flex items-center space-x-3 rounded transition-colors" data-lang="zh">
                             <span class="text-lg">🇨🇳</span>
-                            <span class="font-medium text-gray-900 dark:text-gray-100">中文</span>
+                            <span class="font-medium">中文</span>
                         </button>
                         <button class="mobile-language-option w-full px-3 py-2 text-left hover:bg-gray-50 dark:hover:bg-gray-700 flex items-center space-x-3 rounded transition-colors" data-lang="tr">
                             <span class="text-lg">🇹🇷</span>
-                            <span class="font-medium text-gray-900 dark:text-gray-100">Türkçe</span>
+                            <span class="font-medium">Türkçe</span>
                         </button>
                         <button class="mobile-language-option w-full px-3 py-2 text-left hover:bg-gray-50 dark:hover:bg-gray-700 flex items-center space-x-3 rounded transition-colors" data-lang="fa">
                             <span class="text-lg">🇮🇷</span>
-                            <span class="font-medium text-gray-900 dark:text-gray-100">فارسی</span>
+                            <span class="font-medium">فارسی</span>
                         </button>
                         <button class="mobile-language-option w-full px-3 py-2 text-left hover:bg-gray-50 dark:hover:bg-gray-700 flex items-center space-x-3 rounded transition-colors" data-lang="ru">
                             <span class="text-lg">🇷🇺</span>
-                            <span class="font-medium text-gray-900 dark:text-gray-100">Русский</span>
+                            <span class="font-medium">Русский</span>
                         </button>
                     </div>
                 </div>
@@ -155,7 +161,7 @@
 
     <!-- Hero Section -->
     <section id="home" class="pt-16 bg-gradient-to-br from-blue-50 to-teal-50 min-h-screen flex items-center">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div class="fade-in">
                     <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
@@ -809,7 +815,7 @@
                                     </div>
                                     <div class="ml-4">
                                         <h4 class="text-lg font-semibold text-gray-900" data-translate="contact_email_title">Email</h4>
-                                        <a href="mailto:dr.abdulrahman@example.com" class="text-blue-600 hover:text-blue-700">dr.abdulrahman@example.com</a>
+                                        <a href="mailto:dr.abdulrahman@example.com" class="text-blue-600 hover:text-blue-700">abdulrahman@gmail.com</a>
                                     </div>
                                 </div>
                                 
