@@ -1503,3 +1503,115 @@ setInterval(() => {
     currentTestimonial = currentTestimonial >= maxTestimonials ? 0 : currentTestimonial + 1;
     scrollToTestimonial(currentTestimonial);
 }, 5000);
+
+
+// 🚀 HAMZAH AHMED - DEVELOPER SIGNATURE 🚀
+// Add this to your projects for that clean developer flex
+
+(function() {
+    const colors = {
+        primary: '\x1b[36m',    // Cyan
+        secondary: '\x1b[95m',  // Bright Magenta
+        accent: '\x1b[93m',     // Bright Yellow
+        success: '\x1b[92m',    // Bright Green
+        text: '\x1b[97m',       // Bright White
+        reset: '\x1b[0m',
+        bold: '\x1b[1m',
+        dim: '\x1b[2m'
+    };
+
+    // Cool ASCII signature
+    function showSignature() {
+        console.log('\n' + colors.primary + colors.bold + '╔═══════════════════════════════════════════════════════════╗' + colors.reset);
+        console.log(colors.primary + colors.bold + '║' + colors.text + '                 🎯 CRAFTED WITH CODE 🎯                  ' + colors.primary + '║' + colors.reset);
+        console.log(colors.primary + colors.bold + '╠═══════════════════════════════════════════════════════════╣' + colors.reset);
+        console.log(colors.primary + colors.bold + '║' + colors.reset + '                                                           ' + colors.primary + colors.bold + '║' + colors.reset);
+        console.log(colors.primary + colors.bold + '║' + colors.secondary + colors.bold + '    ██╗  ██╗ █████╗ ███╗   ███╗███████╗ █████╗ ██╗  ██╗    ' + colors.primary + '║' + colors.reset);
+        console.log(colors.primary + colors.bold + '║' + colors.secondary + colors.bold + '    ██║  ██║██╔══██╗████╗ ████║╚══███╔╝██╔══██╗██║  ██║    ' + colors.primary + '║' + colors.reset);
+        console.log(colors.primary + colors.bold + '║' + colors.secondary + colors.bold + '    ███████║███████║██╔████╔██║  ███╔╝ ███████║███████║    ' + colors.primary + '║' + colors.reset);
+        console.log(colors.primary + colors.bold + '║' + colors.secondary + colors.bold + '    ██╔══██║██╔══██║██║╚██╔╝██║ ███╔╝  ██╔══██║██╔══██║    ' + colors.primary + '║' + colors.reset);
+        console.log(colors.primary + colors.bold + '║' + colors.secondary + colors.bold + '    ██║  ██║██║  ██║██║ ╚═╝ ██║███████╗██║  ██║██║  ██║    ' + colors.primary + '║' + colors.reset);
+        console.log(colors.primary + colors.bold + '║' + colors.secondary + colors.bold + '    ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝    ' + colors.primary + '║' + colors.reset);
+        console.log(colors.primary + colors.bold + '║' + colors.reset + '                                                           ' + colors.primary + colors.bold + '║' + colors.reset);
+        console.log(colors.primary + colors.bold + '║' + colors.accent + colors.bold + '               Hamzah AHMED - Full Stack Dev               ' + colors.primary + '║' + colors.reset);
+        console.log(colors.primary + colors.bold + '║' + colors.reset + '                                                           ' + colors.primary + colors.bold + '║' + colors.reset);
+        console.log(colors.primary + colors.bold + '╠═══════════════════════════════════════════════════════════╣' + colors.reset);
+        console.log(colors.primary + colors.bold + '║' + colors.text + '  🔗 Connect with me:                                     ' + colors.primary + '║' + colors.reset);
+        console.log(colors.primary + colors.bold + '║' + colors.success + '     💼 Portfolio: ' + colors.text + 'hamzah.dev                             ' + colors.primary + '║' + colors.reset);
+        console.log(colors.primary + colors.bold + '║' + colors.success + '     📧 Email: ' + colors.text + 'hello@hamzah.dev                           ' + colors.primary + '║' + colors.reset);
+        console.log(colors.primary + colors.bold + '║' + colors.success + '     🐙 GitHub: ' + colors.text + 'github.com/hamzahdev                      ' + colors.primary + '║' + colors.reset);
+        console.log(colors.primary + colors.bold + '║' + colors.success + '     💼 LinkedIn: ' + colors.text + 'linkedin.com/in/hamzahdev               ' + colors.primary + '║' + colors.reset);
+        console.log(colors.primary + colors.bold + '║' + colors.reset + '                                                           ' + colors.primary + colors.bold + '║' + colors.reset);
+        console.log(colors.primary + colors.bold + '║' + colors.dim + colors.text + '  "Building digital experiences, one line at a time"       ' + colors.primary + colors.bold + '║' + colors.reset);
+        console.log(colors.primary + colors.bold + '║' + colors.accent + '                    Made with ❤️ and ☕                   ' + colors.primary + '║' + colors.reset);
+        console.log(colors.primary + colors.bold + '╚═══════════════════════════════════════════════════════════╝' + colors.reset);
+        console.log('\n');
+    }
+
+    // Minimal signature for smaller spaces
+    function showMiniSignature() {
+        console.log('\n' + colors.primary + '─'.repeat(50) + colors.reset);
+        console.log(colors.secondary + colors.bold + '🚀 Hamzah Ahmed' + colors.reset + colors.text + ' | Full Stack Developer' + colors.reset);
+        console.log(colors.success + '💼 hamzah.dev' + colors.text + ' | ' + colors.success + '🐙 github.com/hamzahdev' + colors.reset);
+        console.log(colors.accent + '"Code with purpose, build with passion"' + colors.reset);
+        console.log(colors.primary + '─'.repeat(50) + colors.reset + '\n');
+    }
+
+    // One-liner signature
+    function showOneLiner() {
+        console.log(colors.secondary + colors.bold + '🎯 Hamzah Ahmed' + colors.reset + colors.text + ' • Full Stack Dev • ' + colors.success + 'hamzah.dev' + colors.text + ' • Made with ❤️' + colors.reset);
+    }
+
+    // Animated typing signature
+    function showTypingSignature() {
+        const messages = [
+            colors.primary + colors.bold + '> Initializing developer signature...' + colors.reset,
+            colors.success + '> Loading Hamzah Ahmed profile...' + colors.reset,
+            colors.accent + '> Full Stack Developer detected!' + colors.reset,
+            colors.secondary + '> Portfolio: hamzah.dev' + colors.reset,
+            colors.text + '> Status: Available for awesome projects! 🚀' + colors.reset
+        ];
+
+        messages.forEach((msg, index) => {
+            setTimeout(() => {
+                console.log(msg);
+                if (index === messages.length - 1) {
+                    setTimeout(() => {
+                        console.log(colors.primary + '─'.repeat(40) + colors.reset);
+                        console.log(colors.secondary + colors.bold + '🎯 Ready to build something amazing?' + colors.reset);
+                        console.log(colors.primary + '─'.repeat(40) + colors.reset + '\n');
+                    }, 500);
+                }
+            }, index * 800);
+        });
+    }
+
+    // Usage Guide
+    function showUsageGuide() {
+        console.log('\n' + colors.accent + colors.bold + ' SIGNATURE COMMANDS:' + colors.reset);
+        console.log(colors.secondary + '  hamzahSignature()' + colors.text + ' - Full ASCII art version' + colors.reset);
+        console.log(colors.secondary + '  hamzahMini()' + colors.text + '      - Compact professional version' + colors.reset);
+        console.log(colors.secondary + '  hamzahOne()' + colors.text + '       - Quick one-liner' + colors.reset);
+        console.log(colors.secondary + '  hamzahTyping()' + colors.text + '    - Animated typing effect' + colors.reset);
+    }
+
+    // Make functions globally available
+    window.hamzahSignature = showSignature;
+    window.hamzahMini = showMiniSignature;
+    window.hamzahOne = showOneLiner;
+    window.hamzahTyping = showTypingSignature;
+
+    // Auto-show signature and then the usage guide
+    setTimeout(() => {
+        showSignature();
+        showUsageGuide();
+    }, 500);
+
+})();
+
+// 🎯 USAGE:
+// hamzahSignature() - Full ASCII signature
+// hamzahMini() - Compact version
+// hamzahOne() - One-liner version  
+// hamzahTyping() - Animated typing effect
+//
