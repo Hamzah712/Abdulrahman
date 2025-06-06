@@ -1436,9 +1436,9 @@ document.addEventListener('DOMContentLoaded', () => {
     switchLanguage(currentLanguage);
 });
 
-// Dark Mode functionality
-const darkModeToggle = document.getElementById('dark-mode-toggle');
-const darkModeIcon = document.getElementById('dark-mode-icon');
+// Dark Mode functionality (Updated to handle multiple buttons)
+const darkModeToggleButtons = document.querySelectorAll('.dark-mode-toggle');
+const darkModeIcons = document.querySelectorAll('.dark-mode-icon');
 let isDarkMode = localStorage.getItem('darkMode') === 'true';
 
 function toggleDarkMode() {
@@ -1450,14 +1450,21 @@ function toggleDarkMode() {
 function updateDarkMode() {
     if (isDarkMode) {
         document.documentElement.classList.add('dark');
-        darkModeIcon.className = 'fas fa-sun text-gray-700 dark:text-gray-300';
+        darkModeIcons.forEach(icon => {
+            icon.className = 'fas fa-sun text-gray-700 dark:text-gray-300 dark-mode-icon';
+        });
     } else {
         document.documentElement.classList.remove('dark');
-        darkModeIcon.className = 'fas fa-moon text-gray-700 dark:text-gray-300';
+        darkModeIcons.forEach(icon => {
+            icon.className = 'fas fa-moon text-gray-700 dark:text-gray-300 dark-mode-icon';
+        });
     }
 }
 
-darkModeToggle.addEventListener('click', toggleDarkMode);
+// Add event listeners to all dark mode toggle buttons
+darkModeToggleButtons.forEach(button => {
+    button.addEventListener('click', toggleDarkMode);
+});
 
 // Initialize dark mode on page load
 document.addEventListener('DOMContentLoaded', () => {
